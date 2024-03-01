@@ -25,8 +25,9 @@ app.post('/', (req, res) => {
     const mailOptions = {
         from: email,
         to: process.env.SMTP_USER,
+        replyTo: email,
         subject: `New message from ${name} ${lastName}`,
-        text: `${name}\m${lastName}\n${message}`,
+        text: `${name}\n${lastName}\n${email}\n${message}`,
     };
 
     transporter.sendMail(mailOptions, (err, info) => {

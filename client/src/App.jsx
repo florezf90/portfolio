@@ -1,4 +1,3 @@
-
 import './App.css'
 import DOMPurify from 'dompurify';
 import { siReact } from 'simple-icons'
@@ -12,6 +11,8 @@ function App() {
     message: '',
   });
 
+const backendUrl = import.meta.env.VITE_PAGE_URL || 'http://localhost:3001';
+
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -21,7 +22,7 @@ function App() {
   const hanldeSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch('http://localhost:3001/', {
+      const response = await fetch(backendUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -39,7 +40,7 @@ function App() {
         });
         alert('email sent');
       } else {
-        console.error("error sending email");
+        console.error("error sending email", await response.text());
       }
     } catch (error) {
       console.error("error sending email",error);
