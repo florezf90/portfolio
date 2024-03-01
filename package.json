@@ -10,11 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "dompurify": "^3.0.9",
     "framer-motion": "^11.0.6",
     "nodemailer": "^6.9.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.1"
+    "react-router-dom": "^6.22.1",
+    "simple-icons": "^11.6.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",
