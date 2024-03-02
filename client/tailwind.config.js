@@ -2,10 +2,9 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx, css}"],
   theme: {
-    container: {
-      center: true,
+    extend: {
+      display: ['responsive', 'group-hover', 'group-focus'],
     },
-    extend: {},
   },
   plugins: [],
 };
