@@ -49,7 +49,7 @@ const backendUrl = import.meta.env.VITE_PAGE_URL || 'http://localhost:3001';
 
   return (
     <div className='h-screen bg-cover bg-center flex items-center justify-center '  style={{ backgroundColor: 'red',  }}>
-      <div className='text-center'>
+      <div className='text-center mt-20'>
       <h1 className='text-3xl font-bold text-blue-500 mb-10'>Hello tailwind css</h1>
        <svg dangerouslySetInnerHTML={{ __html: purifiedIcons }} style={{ width: 100, height: 100, fill: `#${siReact.hex}` }}></svg>
     <fieldset style={{border: "1px solid black", padding: 10}}>
