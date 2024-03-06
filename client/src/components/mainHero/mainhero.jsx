@@ -14,11 +14,11 @@ const MainHero = () => {
   const purifiedIcons = svgPurified(svgStrings);
 
   return (
-    <section
+    <div
       id="home"
-      className="h-screen flex items-center justify-center bg-slate-500"
+      className="h-full flex items-center justify-center bg-slate-500"
     >
-      <div className="flex flex-col lg:flex-row w-10/12 mx-auto bg-slate-100 h-full">
+      <article className="flex flex-col lg:flex-row w-10/12 mx-auto h-full">
         <header className="lg:w-6/12 md:w-full bg-neutral-600 p-4 flex flex-col items-center justify-center">
           <h1 className=" text-white text-6xl font-bold mb-10 text-center">
             Hello, I&apos;m felipe florez
@@ -47,20 +47,16 @@ const MainHero = () => {
             </button>
           </div>
         </header>
-        <div className="md:w-full lg:w-6/12 bg-green-400 flex items-center justify-center p-4">
-          <figure className="flex flex-shrink-0">
-            <div className="w-full max-w-xs h-60 md:h-80 lg:h-100 rounded-full overflow-hidden flex justify-center items-center bg-white">
-              <img
-                alt="Felipe Florez"
-                src={felipeFlorez}
-                className="w-full h-full object-cover rounded-full"
-              />
-            </div>
-            <figcaption className="sr-only">Felipe Florez</figcaption>
-          </figure>
+        <div className="md:w-full lg:w-6/12 flex items-center justify-center p-4 bg-green-900">
+          <img
+            src={felipeFlorez}
+            alt="Felipe Florez"
+            className="florez rounded-full w-full h-auto object-cover"
+            style={{ borderRadius: "50%", width: "90%", height: "95%" }} // Custom styles for oval shape
+          />
         </div>
-      </div>
-    </section>
+      </article>
+    </div>
   );
 };
 
