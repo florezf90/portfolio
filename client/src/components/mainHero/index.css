@@ -1,1 +1,6 @@
-/* attached this file to the component just I case I need to make manual adjustments to the styling */
+.florez {
+  border-radius: 50%;
+  width: auto; /* Adjust the width to control the shape */
+  height: 100%; /* Set height to maintain aspect ratio */
+  object-fit: cover;
+}
