@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-slate-800 h-[10vh]">
-      <div className="h-full bg-white w-10/12 flex mx-auto items-center justify-between">
+      <div className="h-full bg-red-700  w-10/12 flex mx-auto items-center justify-between">
         <div className="flex items-center">
           <img
             className="h-[5vh] w-20"
