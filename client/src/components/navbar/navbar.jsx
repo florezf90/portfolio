@@ -102,7 +102,7 @@ const Navbar = () => {
         <ul className="flex flex-col text-center justify-center text-2xl font-bold">
           <li>
             <button
-              onClick={() => scrollToSection("#home")}
+              onClick={() => {scrollToSection("#home"); toggleMenu();}}
               className="text-3xl py-10 w-full"
             >
               Home
@@ -110,7 +110,7 @@ const Navbar = () => {
           </li>
           <li>
             <button
-              onClick={() => scrollToSection("#about")}
+              onClick={() => {scrollToSection("#about"); toggleMenu();}}
               className="text-3xl py-10 w-full"
             >
               About
@@ -118,7 +118,7 @@ const Navbar = () => {
           </li>
           <li>
             <button
-              onClick={() => scrollToSection("#projects")}
+              onClick={() => {scrollToSection("#projects"); toggleMenu();}}
               className="text-3xl py-10 w-full"
             >
               Projects
@@ -126,7 +126,7 @@ const Navbar = () => {
           </li>
           <li>
             <button
-              onClick={() => scrollToSection("#contact")}
+              onClick={() => {scrollToSection("#contact"); toggleMenu();}}
               className="text-3xl py-10 w-full"
             >
               Get in Touch

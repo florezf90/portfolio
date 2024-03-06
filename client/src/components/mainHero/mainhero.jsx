@@ -16,10 +16,10 @@ const MainHero = () => {
   return (
     <div
       id="home"
-      className="h-full flex items-center justify-center bg-slate-500"
+      className="h-full flex items-center justify-center mb-10 bg-slate-500"
     >
       <article className="flex flex-col lg:flex-row w-10/12 mx-auto h-full">
-        <header className="lg:w-6/12 md:w-full bg-neutral-600 p-4 flex flex-col items-center justify-center">
+        <header className="lg:w-6/12 md:w-full  p-4 flex flex-col items-center justify-center">
           <h1 className=" text-white text-6xl font-bold mb-10 text-center">
             Hello, I&apos;m felipe florez
           </h1>
@@ -30,16 +30,13 @@ const MainHero = () => {
           <div className="flex mb-4 flex-row">
             <div
               dangerouslySetInnerHTML={{ __html: purifiedIcons }}
-              className="h-10 w-10 mx-3"
-            />
-            <div
-              dangerouslySetInnerHTML={{ __html: purifiedIcons[1] }}
-              className="h-10 w-10"
+              className="h-10 w-10 mx-3 flex flex-row"
+              style={{ width: "70%" }} // Custom styles for oval shape
             />
             <siTailwindcss className="text-white text-5xl mx-2" />
           </div>
           <div className="flex flex-row items-center space-x-4">
-            <button className="bg-green-500 text-white px-4 py-2 rounded-lg  mb-2">
+            <button className=" bg-green-500 text-white px-4 py-2 rounded-lg  mb-2">
               Learn More
             </button>
             <button className="bg-red-500 text-white px-4 py-2 rounded-lg  mb-2">
@@ -47,7 +44,7 @@ const MainHero = () => {
             </button>
           </div>
         </header>
-        <div className="md:w-full lg:w-6/12 flex items-center justify-center p-4 bg-green-900">
+        <div className="md:w-full lg:w-6/12 flex items-center justify-center p-4 ">
           <img
             src={felipeFlorez}
             alt="Felipe Florez"

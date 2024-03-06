@@ -1,0 +1,21 @@
+.mewalking {
+    max-width: 55%;
+    max-height: 90%;
+    border-radius: 4%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 120px;
+    margin-top: 40px;
+}
+
+.meLooking {
+    margin-right: 80px;
+    border-radius: 4%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.eduTtitle {
+    margin-left: 20px;
+}
