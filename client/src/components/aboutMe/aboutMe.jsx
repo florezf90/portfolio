@@ -1,9 +1,15 @@
 import "./index.css";
 import mewalking from "../../assets/mewalking.jpg";
 import meLooking from "../../assets/looking.jpg";
+import purifyIcons from "../../utils/purify";
+import { siReadme } from "simple-icons";
+import myResume from "../../assets/Myresume.pdf"
 
 
 const AboutMe = () => {
+
+  const readMeIcon = [siReadme.svg];
+ const purifiedReadMeIcon = purifyIcons(readMeIcon);
 
 
 
@@ -46,8 +52,15 @@ const AboutMe = () => {
           </div>
           <div className="flex flex-col md:flex-row items-start md:items-center md:justify-start space-x-0 md:space-x-20 mt-5">
             <div>
-              <h1 className="text-white text-2xl font-bold">Location:</h1>
-              <p className="text-white mb-8">San Antonio, TX</p>
+              <h1 className="text-white text-2xl font-bold">Resume:</h1>
+              <a href={myResume}>
+                <div
+                  dangerouslySetInnerHTML={{ __html: purifiedReadMeIcon }}
+                  className="text-white mb-8 saes"
+                  aria-label="resumeIcon"
+                  role="img"
+                />
+              </a>
             </div>
             <div className="md:ml-20">
               <h1 className="text-white text-2xl font-bold">Email:</h1>
