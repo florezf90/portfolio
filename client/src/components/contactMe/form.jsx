@@ -61,16 +61,17 @@ const Form = () => {
           <fieldset style={{ border: "1px solid black", padding: 10 }}>
             <legend className="text-2xl px-3 pb-2"> Contact me</legend>
             <form onSubmit={hanldeSubmit}>
-              <label htmlFor="name">
+              <label >
                 <h1>name</h1>
                 <input
                   type="text"
                   name="name"
+                  autoComplete="off"
                   value={formData.name}
                   onChange={handleInputChange}
                 />
               </label>
-              <label htmlFor="lastName">
+              <label >
                 <h1>Last name</h1>
                 <input
                   type="text"
@@ -79,16 +80,17 @@ const Form = () => {
                   onChange={handleInputChange}
                 />
               </label>
-              <label htmlFor="email">
+              <label >
                 <h1>email</h1>
                 <input
                   type="email"
                   name="email"
+                  autoComplete="off"
                   value={formData.email}
                   onChange={handleInputChange}
                 />
               </label>
-              <label htmlFor="message">
+              <label>
                 <h1>message</h1>
                 <textarea
                   name="message"
@@ -102,12 +104,14 @@ const Form = () => {
               <button
                 type="submit"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-4 rounded "
+              aria-label="Submit"
               >
                 Send
               </button>
               <button
                 type="reset"
                 className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 my-4 rounded mx-2"
+              aria-label="Reset"
               >
                 Reset
               </button>

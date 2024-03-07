@@ -3,6 +3,7 @@ import Navbar from './components/navbar/navbar';
 import MainHero from './components/mainHero/mainhero';
 import Form from './components/contactMe/form';
 import AboutMe from './components/aboutMe/aboutMe';
+import SkillsAndCertifications from './components/skillset/skills';
 function App() {
 
 
@@ -12,6 +13,7 @@ function App() {
       <Navbar />
       <MainHero />
       <AboutMe />
+      <SkillsAndCertifications />
       <Form />
     </main>
   );
