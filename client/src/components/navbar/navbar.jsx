@@ -40,6 +40,7 @@ const Navbar = () => {
           />
           <button
             className="text-2xl font-bold text-gray-700 ml-1"
+            aria-label="Home"
             onClick={() => scrollToSection("#home")}
           >
             florezf90.dev
@@ -48,30 +49,34 @@ const Navbar = () => {
         <div className="lg:flex hidden items-center bg-white space-x-3">
           <button
             onClick={() => scrollToSection("#home")}
+            aria-label="Home"
             className="text-gray-700 hover:bg-slate-200 px-3 py-2 text-2xl font-bold rounded"
           >
             Home
           </button>
           <button
             onClick={() => scrollToSection("#about")}
+            aria-label="About"
             className="text-gray-700 hover:bg-slate-200 px-3 py-2 text-2xl font-bold rounded"
           >
             About
           </button>
           <button
             onClick={() => scrollToSection("#projects")}
+            aria-label="Projects"
             className="text-gray-700 hover:bg-slate-200 px-3 py-2 text-2xl font-bold rounded"
           >
             Projects
           </button>
           <button
             onClick={() => scrollToSection("#contact")}
+            aria-label="Contact"
             className="text-gray-700 hover:bg-slate-200 px-3 py-2 text-2xl font-bold rounded"
           >
             Get in Touch
           </button>
         </div>
-        <button className="lg:hidden block text-gray-700" onClick={toggleMenu}>
+        <button  aria-label="Menu" className="lg:hidden block text-gray-700" onClick={toggleMenu}>
           <MenuIcon />
         </button>
       </div>
@@ -83,6 +88,7 @@ const Navbar = () => {
         <button
           className="absolute top-0 right-0 mt-4 mr-4 text-gray-700"
           onClick={toggleMenu}
+          aria-label="Close Menu"
         >
           <svg
             className="w-10 h-10"
@@ -104,6 +110,7 @@ const Navbar = () => {
             <button
               onClick={() => {scrollToSection("#home"); toggleMenu();}}
               className="text-3xl py-10 w-full"
+              aria-label="Home"
             >
               Home
             </button>
@@ -112,6 +119,7 @@ const Navbar = () => {
             <button
               onClick={() => {scrollToSection("#about"); toggleMenu();}}
               className="text-3xl py-10 w-full"
+              aria-label="About"
             >
               About
             </button>
@@ -120,6 +128,7 @@ const Navbar = () => {
             <button
               onClick={() => {scrollToSection("#projects"); toggleMenu();}}
               className="text-3xl py-10 w-full"
+              aria-label="Projects"
             >
               Projects
             </button>
@@ -128,6 +137,7 @@ const Navbar = () => {
             <button
               onClick={() => {scrollToSection("#contact"); toggleMenu();}}
               className="text-3xl py-10 w-full"
+              aria-label="Contact"
             >
               Get in Touch
             </button>

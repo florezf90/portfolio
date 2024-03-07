@@ -2,7 +2,11 @@ import "./index.css";
 import mewalking from "../../assets/mewalking.jpg";
 import meLooking from "../../assets/looking.jpg";
 
+
 const AboutMe = () => {
+
+
+
   return (
     <main
       id="about"

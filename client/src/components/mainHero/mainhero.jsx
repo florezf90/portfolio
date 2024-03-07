@@ -1,17 +1,13 @@
 import { siReact, siTailwindcss } from "simple-icons";
-import DOMPurify from "dompurify";
 import felipeFlorez from "../../assets/converted2.jpg"
+import purifyIcons from "../../utils/purify";
 import "./index.css"
 const MainHero = () => {
-  const svgPurified = (svgs) => {
-    return svgs.map((svg) => DOMPurify.sanitize(svg));
-  };
 
-  const siReactMarkup = siReact.svg;
-  const siTailwindcssMarkup = siTailwindcss.svg;
 
-  const svgStrings = [siReactMarkup, siTailwindcssMarkup];
-  const purifiedIcons = svgPurified(svgStrings);
+
+  const svgStrings = [siReact.svg, siTailwindcss.svg];
+  const purifiedIcons = purifyIcons(svgStrings);
 
   return (
     <div
@@ -28,12 +24,15 @@ const MainHero = () => {
             commited to deliver high-quality solutions
           </p>
           <div className="flex mb-4 flex-row">
-            <div
-              dangerouslySetInnerHTML={{ __html: purifiedIcons }}
-              className="h-10 w-10 mx-3 flex flex-row"
-              style={{ width: "70%" }} // Custom styles for oval shape
-            />
-            <siTailwindcss className="text-white text-5xl mx-2" />
+            <div className="flex flex-row">
+              {purifiedIcons.map((icon, index) => (
+                <div
+                  key={index}
+                  className="h-10 w-10 mx-3"
+                  dangerouslySetInnerHTML={{ __html: icon }}
+                />
+              ))}
+            </div>
           </div>
           <div className="flex flex-row items-center space-x-4">
             <button className=" bg-green-500 text-white px-4 py-2 rounded-lg  mb-2">
