@@ -3,6 +3,7 @@ import Navbar from './components/navbar/navbar';
 import MainHero from './components/mainHero/mainhero';
 import Form from './components/contactMe/form';
 import AboutMe from './components/aboutMe/aboutMe';
+import Projects from './components/projects/projects';
 import SkillsAndCertifications from './components/skillset/skills';
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <MainHero />
       <AboutMe />
       <SkillsAndCertifications />
+      <Projects />
       <Form />
     </main>
   );
