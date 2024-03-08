@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "dompurify": "^3.0.9",
-    "framer-motion": "^11.0.6",
+    "framer-motion": "^11.0.8",
     "nodemailer": "^6.9.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
