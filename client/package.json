@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.6",
+    "@react-google-maps/api": "^2.19.3",
     "dompurify": "^3.0.9",
     "framer-motion": "^11.0.8",
+    "google-map-react": "^2.2.1",
     "nodemailer": "^6.9.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
