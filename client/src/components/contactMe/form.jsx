@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./index.css";
-
+import MapComponent from "../googleMap/Map";
 const Form = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -53,7 +53,12 @@ const Form = () => {
         <h1 className="text-3xl font-bold text-white mb-10">Get In Touch</h1>
       </header>
       <div className="flex flex-col lg:flex-row w-10/12 mx-auto items-center">
-        <div className="lg:w-6/12 w-full h-full bg-slate-500">a</div>
+        <section className="lg:w-6/12 w-full h-full bg-slate-500 flex-row lg:flex-col text-white text-center">
+          <h1 className="text-3xl font-bold my-4">Developed by Felipe Florez</h1>
+          <figure className="w-10/12 h-5/6 bg-slate-100 mx-auto">
+           < MapComponent/>
+          </figure>
+          </section>
         <div className="lg:w-6/12 w-full flex flex-col items-center bg-white">
           <fieldset
             className="flex flex-col items-center p-4 w-10/12 my-10"
