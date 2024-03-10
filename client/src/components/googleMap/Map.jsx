@@ -1,5 +1,5 @@
 import React from "react";
-import { GoogleMap, LoadScript, Marker, useJsApiLoader } from "@react-google-maps/api";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 const containerStyle = {
     width: "100%",
@@ -7,10 +7,11 @@ const containerStyle = {
 };
 
 const center = {
+  lat: 29.703,
+  lng: -98.1245,
+};
 
-    lat: 19.700001,
-    lng: -98.116669
-}
+
 
 const MapComponent = () => {
     return (
