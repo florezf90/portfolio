@@ -1,0 +1,17 @@
+@keyframes neon {
+  from {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #dfdfdf, 0 0 25px #dfdfdf, 0 0 35px #dfdfdf, 0 0 40px #dfdfdf, 0 0 50px #dfdfdf;
+  }
+  to {
+    box-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 7px #dfdfdf, 0 0 8px #dfdfdf, 0 0 10px #dfdfdf, 0 0 14px #dfdfdf, 0 0 18px #dfdfdf;
+  }
+}
+
+.button-neon {
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.button-neon:hover {
+  animation: neon 1.5s ease-in-out infinite alternate;
+}

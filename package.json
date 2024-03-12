@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/florezf90/portfolio#readme",
   "dependencies": {
+    "compression": "^1.7.4",
     "concurrently": "^8.2.2"
   }
 }
