@@ -46,10 +46,10 @@ const Form = () => {
 
   return (
     <div
-      className="h-full flex flex-col bg-cover bg-center   items-center justify-center "
+      className="h-full flex flex-col bg-cover bg-center   items-center justify-center my-20 "
       style={{ backgroundColor: "red" }}
     >
-      <header id="contact">
+      <header id="contact" className="mt-14 mb-4">
         <h1 className="text-3xl font-bold text-white mb-10">Get In Touch</h1>
       </header>
       <div className="flex flex-wrap  h-3/4 w-10/12 my-20  items-center">

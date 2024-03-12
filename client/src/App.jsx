@@ -5,6 +5,7 @@ import Form from './components/contactMe/form';
 import AboutMe from './components/aboutMe/aboutMe';
 import Projects from './components/projects/projects';
 import SkillsAndCertifications from './components/skillset/skills';
+import Footer from './components/footer/footer';
 function App() {
 
 
@@ -17,6 +18,7 @@ function App() {
       <SkillsAndCertifications />
       <Projects />
       <Form />
+      <Footer/>
     </main>
   );
 }
