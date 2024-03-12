@@ -4,6 +4,11 @@ import purifyIcons from "../../utils/purify";
 import "./index.css"
 const MainHero = () => {
 
+    const scrollToSection = (sectionId) => {
+      const section = document.querySelector(sectionId);
+      section.scrollIntoView({ behavior: "smooth" });
+    };
+
 
 
   const svgStrings = [siReact.svg, siTailwindcss.svg];
@@ -35,11 +40,16 @@ const MainHero = () => {
             </div>
           </div>
           <div className="flex flex-row items-center space-x-4">
-            <button className=" bg-green-500 text-white px-4 py-2 rounded-lg  mb-2">
-              Learn More
-            </button>
-            <button className="bg-red-500 text-white px-4 py-2 rounded-lg  mb-2">
-              Get Started
+              <button 
+              onClick={() => scrollToSection("#projects")}
+              className=" bg-green-500 text-white px-4 py-2 rounded-lg  mb-2">
+                My portfolio
+              </button>
+          
+            <button 
+            onClick={() => scrollToSection("#contact")}
+            className="bg-red-500 text-white px-4 py-2 rounded-lg  mb-2">
+              Contact Me
             </button>
           </div>
         </header>

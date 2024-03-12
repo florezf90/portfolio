@@ -13,6 +13,12 @@ const Footer = () => {
       "https://www.instagram.com/luisflorez2259/"
     ];
 
+        const scrollToSection = (sectionId) => {
+          const section = document.querySelector(sectionId);
+          section.scrollIntoView({ behavior: "smooth" });
+        };
+
+
     const socialMedia = [{
       icon: socialIcons,
       link: socialMediaLinks
@@ -35,16 +41,24 @@ return (
       className="lg:w-1/3 h-96 flex flex-col items-center justify-center bg-slate-400"
     >
       <h1 className="text-white text-3xl font-bold">Useful Links</h1>
-      <ul className='py-6'>
-        <li className='my-2'>
-          <a href="#about" >About</a>
+      <ul className="py-6">
+        <li className="my-2">
+          <button
+            onClick={() => scrollToSection("#about")}
+            className="text-white text-xl font-bold"
+          >
+            About
+          </button>
         </li>
-        <li className='my-2'>
-          <a href="#projects">Projects</a>
+        <li className="my-2">
+          <button
+            onClick={() => scrollToSection("#projects")}
+            className="text-white text-xl font-bold"
+          >
+            Projects
+          </button>
         </li>
-        <li className='my-2'>
-          <a href="#contact"> Contact</a>
-        </li>
+
       </ul>
     </section>
     <section
@@ -52,17 +66,19 @@ return (
       className="lg:w-1/3 flex flex-col items-center justify-center bg-slate-400"
     >
       <a href="#navbar">
-        <h1 className="text-white text-3xl font-bold lg:my-0 my-28">Florezf90.dev</h1>
+        <h1 className="text-white text-3xl font-bold lg:my-0 my-28">
+          Florezf90.dev
+        </h1>
       </a>
     </section>
     <section
       id="footerSocial"
       className="lg:w-1/3 flex flex-col items-center justify-center bg-slate-400"
     >
-      <h1 className="text-white text-3xl font-bold mb-10 mt-20 lg:mt-0">Social Media</h1>
-      <div className='flex flex-row mt-2 mb-14'>
-        {generateSocialJsx}
-      </div>
+      <h1 className="text-white text-3xl font-bold mb-10 mt-20 lg:mt-0">
+        Social Media
+      </h1>
+      <div className="flex flex-row mt-2 mb-14">{generateSocialJsx}</div>
     </section>
   </footer>
 ); 
