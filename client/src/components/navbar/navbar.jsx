@@ -1,4 +1,19 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import "./index.css";
+
+const buttonVariants = {
+  hover: {
+    scale: 1.05,
+    boxShadow: "0 0 8px rgba(255, 255, 255, 0.8)",
+  },
+  tap: {
+    scale: 0.95,
+  },
+};
+
+
+
 
 const MenuIcon = () => (
   <svg
@@ -17,6 +32,49 @@ const MenuIcon = () => (
   </svg>
 );
 
+const CloseIcon = () => (
+  <svg
+    className="w-10 h-10"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M6 18L18 6M6 6l12 12"
+    ></path>
+  </svg>
+);
+
+const menuVariants = {
+  open: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+      type: "spring",
+      stiffness: 260,
+      damping: 20,
+    },
+  },
+  closed: {
+    x: "-100%",
+    opacity: 0,
+    transition: {
+      when: "afterChildren",
+      staggerChildren: 0.1,
+      staggerDirection: -1,
+      type: "spring",
+      stiffness: 260,
+      damping: 20,
+    },
+  },
+};
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -30,127 +88,163 @@ const Navbar = () => {
   };
 
   return (
-    <nav id="navbar" className="bg-slate-800 h-[10vh] ">
-      <div className="h-full bg-red-700  w-10/12 flex mx-auto items-center justify-between">
+    <motion.nav
+      id="navbar"
+      className="bg-navy-900 h-[10vh] shadow-md"
+      initial="hidden"
+      animate="visible"
+      variants={buttonVariants}
+    >
+      <div className="h-full w-10/12 flex mx-auto items-center justify-between">
         <div className="flex items-center">
           <img
             className="h-[5vh] w-20"
             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
             alt="Your Company"
           />
-          <button
-            className="text-2xl font-bold text-gray-700 ml-1"
+          <motion.button
+            whileHover="hover"
+            whileTap="tap"
+            variants={buttonVariants}
+            className="px-3 py-2 text-2xl font-bold rounded border-2 border-transparent hover:border-gray-100"
             aria-label="Home"
             onClick={() => scrollToSection("#home")}
           >
             florezf90.dev
-          </button>
+          </motion.button>
         </div>
-        <div className="lg:flex hidden items-center bg-white space-x-3">
-          <button
+        <div className="hidden lg:flex items-center space-x-3">
+          <motion.button
             onClick={() => scrollToSection("#home")}
             aria-label="Home"
-            className="text-gray-700 hover:bg-slate-200 px-3 py-2 text-2xl font-bold rounded"
+            whileHover="hover"
+            whileTap="tap"
+            variants={buttonVariants}
+            className="px-3 py-2 text-2xl font-bold rounded border-2 border-transparent hover:border-gray-100"
           >
             Home
-          </button>
-          <button
+          </motion.button>
+          <motion.button
+            whileHover="hover"
+            whileTap="tap"
+            variants={buttonVariants}
             onClick={() => scrollToSection("#about")}
-            aria-label="About"
-            className="text-gray-700 hover:bg-slate-200 px-3 py-2 text-2xl font-bold rounded"
+            aria-label="Home"
+            className="px-3 py-2 text-2xl font-bold rounded border-2 border-transparent hover:border-gray-100"
           >
             About
-          </button>
-          <button
+          </motion.button>
+          <motion.button
+            whileHover="hover"
+            whileTap="tap"
+            variants={buttonVariants}
             onClick={() => scrollToSection("#projects")}
-            aria-label="Projects"
-            className="text-gray-700 hover:bg-slate-200 px-3 py-2 text-2xl font-bold rounded"
+            aria-label="Home"
+            className="px-3 py-2 text-2xl font-bold rounded border-2 border-transparent hover:border-gray-100"
           >
             Projects
-          </button>
-          <button
+          </motion.button>
+          <motion.button
+            whileHover="hover"
+            whileTap="tap"
+            variants={buttonVariants}
             onClick={() => scrollToSection("#contact")}
-            aria-label="Contact"
-            className="text-gray-700 hover:bg-slate-200 px-3 py-2 text-2xl font-bold rounded"
+            aria-label="Home"
+            className="px-3 py-2 text-2xl font-bold rounded border-2 border-transparent hover:border-gray-100"
           >
-            Get in Touch
-          </button>
+            get in touch
+          </motion.button>
         </div>
-        <button  aria-label="Menu" className="lg:hidden block text-gray-700" onClick={toggleMenu}>
-          <MenuIcon />
-        </button>
-      </div>
-      <div
-        className={`lg:hidden fixed inset-y-0 left-0 transform ${
-          isMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } flex flex-col justify-center h-full transition-transform duration-300 ease-in-out z-50 bg-white shadow-md w-4/5`}
-      >
-        <button
-          className="absolute top-0 right-0 mt-4 mr-4 text-gray-700"
+        <motion.button
+          whileHover="hover"
+          whileTap="tap"
+          variants={buttonVariants}
+          aria-label="Menu"
+          className="block lg:hidden"
           onClick={toggleMenu}
-          aria-label="Close Menu"
         >
-          <svg
-            className="w-10 h-10"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M6 18L18 6M6 6l12 12"
-            ></path>
-          </svg>
-        </button>
-        <ul className="flex flex-col text-center justify-center text-2xl font-bold">
-          <li>
-            <button
-              onClick={() => {scrollToSection("#home"); toggleMenu();}}
-              className="text-3xl py-10 w-full"
-              aria-label="Home"
-            >
-              Home
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => {scrollToSection("#about"); toggleMenu();}}
-              className="text-3xl py-10 w-full"
-              aria-label="About"
-            >
-              About
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => {scrollToSection("#projects"); toggleMenu();}}
-              className="text-3xl py-10 w-full"
-              aria-label="Projects"
-            >
-              Projects
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => {scrollToSection("#contact"); toggleMenu();}}
-              className="text-3xl py-10 w-full"
-              aria-label="Contact"
-            >
-              Get in Touch
-            </button>
-          </li>
-        </ul>
+          <MenuIcon />
+        </motion.button>
       </div>
-      {isMenuOpen && (
-        <div
-          className="lg:hidden fixed inset-0 bg-black bg-opacity-25 z-40"
-          onClick={toggleMenu}
-        ></div>
-      )}
-    </nav>
+      <AnimatePresence>
+        {isMenuOpen && (
+          <>
+            <motion.div
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={menuVariants}
+              className="fixed inset-y-0 left-0 flex flex-col justify-center h-full z-50 bg-white w-4/5"
+            >
+              <button
+                className="absolute top-0 right-0 mt-4 mr-4 text-blue-800"
+                onClick={toggleMenu}
+                aria-label="Close"
+              >
+                <CloseIcon />
+              </button>
+              <ul className="flex flex-col items-center justify-center text-2xl font-bold text-center">
+                <li>
+                  <button
+                    onClick={() => {
+                      scrollToSection("#home");
+                      toggleMenu();
+                    }}
+                    aria-label="Home"
+                    className="text-blue-800 hover:bg-blue-200 px-3 py-4 text-2xl font-bold rounded"
+                  >
+                    Home
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      scrollToSection("#about");
+                      toggleMenu();
+                    }}
+                    aria-label="Home"
+                    className="text-blue-800 hover:bg-blue-200 px-3 py-4 text-2xl font-bold rounded"
+                  >
+                    About
+                  </button>
+                  <li>
+                    <button
+                      onClick={() => {
+                        scrollToSection("#projects");
+                        toggleMenu();
+                      }}
+                      aria-label="Home"
+                      className="text-blue-800 hover:bg-blue-200 px-3 py-4 text-2xl font-bold rounded"
+                    >
+                      Projects
+                    </button>
+                    <li>
+                      <button
+                        onClick={() => {
+                          scrollToSection("#contact");
+                          toggleMenu();
+                        }}
+                        aria-label="Home"
+                        className="text-blue-800 hover:bg-blue-200 px-3 py-4 text-2xl font-bold rounded"
+                      >
+                        Get In Touch
+                      </button>
+                    </li>
+                  </li>
+                </li>
+              </ul>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-blue-800 bg-opacity-25 z-40"
+              onClick={toggleMenu}
+            ></motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </motion.nav>
   );
 };
 
