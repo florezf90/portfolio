@@ -104,7 +104,7 @@ const Navbar = () => {
               animate="open"
               exit="closed"
               variants={menuVariants}
-              className="fixed inset-y-0 left-0 flex flex-col justify-center h-full z-50  sidebar w-4/5"
+              className=" inset-y-0 left-0 justify-center z-50  sidebar w-4/5"
             >
               <button
                 className="absolute top-0 right-0 mt-4 mr-4 text-blue-800"
