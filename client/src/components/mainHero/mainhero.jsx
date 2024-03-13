@@ -17,18 +17,18 @@ const MainHero = () => {
   return (
     <div
       id="home"
-      className="h-full flex items-center justify-center mb-10 bg-slate-500"
+      className="h-full flex items-center justify-center mb-10"
     >
-      <article className="flex flex-col lg:flex-row w-10/12 mx-auto h-full">
+      <article className="flex flex-col lg:flex-row w-10/12 mx-auto ">
         <header className="lg:w-6/12 md:w-full  p-4 flex flex-col items-center justify-center">
-          <h1 className=" text-white text-6xl font-bold mb-10 text-center">
+          <h1 className=" text-6xl font-bold my-10 text-center">
             Hello, I&apos;m felipe florez
           </h1>
-          <p className="text-white text-2xl  mb-10 text-center">
+          <p className="text-2xl  mb-10 text-center">
             an engaging full-stack developer based in San Antonio, TX who is
             commited to deliver high-quality solutions
           </p>
-          <div className="flex mb-4 flex-row">
+          <div className="mb-5">
             <div className="flex flex-row">
               {purifiedIcons.map((icon, index) => (
                 <div
@@ -53,12 +53,12 @@ const MainHero = () => {
             </button>
           </div>
         </header>
-        <div className="md:w-full lg:w-6/12 flex items-center justify-center p-4 ">
+        <div className="md:w-full lg:w-6/12 flex items-center justify-center ">
           <img
             src={felipeFlorez}
             alt="Felipe Florez"
-            className="florez rounded-full w-full h-auto object-cover"
-            style={{ borderRadius: "50%", width: "90%", height: "95%" }} // Custom styles for oval shape
+            className="florez rounded-full  object-cover"
+            // style={{ borderRadius: "50%", width: "90%", height: "80%" }} // Custom styles for oval shape
           />
         </div>
       </article>

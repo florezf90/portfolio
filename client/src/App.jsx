@@ -11,7 +11,7 @@ function App() {
 
 
   return (
-    <main className='bg-slate-500'>
+    <main >
       <Navbar />
       <MainHero />
       <AboutMe />
