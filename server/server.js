@@ -4,13 +4,20 @@ const path = require('path');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const compression = require('compression');
-
+const zlib = require('zlib');
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(compression());
+app.use(compression({
+brotli: {
+    threshold: 1024,
+    level: zlib.constants.BROTLI_MAX_QUALITY,
+}, 
+gzip: 
+{ threshold: 1024, level: zlib.constants.Z_BEST_COMPRESSION },
+}));
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 

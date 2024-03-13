@@ -7,9 +7,3 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 
 }
-
-@font-face {
-  font-family: 'Your Web Font';
-  src: url('path-to-your-font.woff2') format('woff2');
-  font-display: swap;
-}

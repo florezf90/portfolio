@@ -1,5 +1,5 @@
 import { siReact, siTailwindcss } from "simple-icons";
-import felipeFlorez from "../../assets/converted2.jpg"
+import felipeFlorez from "../../assets/converted2.webp"
 import purifyIcons from "../../utils/purify";
 import "./index.css"
 const MainHero = () => {
@@ -28,7 +28,7 @@ const MainHero = () => {
             an engaging full-stack developer based in San Antonio, TX who is
             commited to deliver high-quality solutions
           </p>
-          <div className="mb-5">
+          <div className="mb-4">
             <div className="flex flex-row">
               {purifiedIcons.map((icon, index) => (
                 <div
