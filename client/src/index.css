@@ -19,3 +19,8 @@ textarea {
   padding: 8px;
   margin-bottom: 10px;
 }
+
+body {
+background: rgb(0,49,144);
+background: radial-gradient(circle, rgba(0,49,144,1) 0%, rgba(7,2,50,1) 72%, rgba(0,0,0,1) 100%);
+}

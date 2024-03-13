@@ -45,14 +45,13 @@ const Form = () => {
   };
 
   return (
-    <div
-      className="h-full flex flex-col bg-cover bg-center   items-center justify-center my-20 "
-      style={{ backgroundColor: "red" }}
+    <main
+      className="h-full flex flex-col bg-cover bg-center main  items-center justify-center py-20 "
     >
       <header id="contact" className="mt-14 mb-4">
         <h1 className="text-3xl font-bold text-white mb-10">Get In Touch</h1>
       </header>
-      <div className="flex flex-wrap  h-3/4 w-10/12 my-20  items-center">
+      <section className="flex flex-wrap  h-3/4 w-10/12 my-20  items-center">
         <section className="lg:w-6/12 w-full  bg-slate-500 flex-row lg:flex-col text-white text-center" style={{ height: "600px"}}>
           <h1 className="text-3xl font-bold my-4">Developed by Felipe Florez</h1>
           <figure className="w-10/12 h-3/4 flex items-center bg-slate-100 mx-auto" >
@@ -123,8 +122,8 @@ const Form = () => {
             </form>
           </fieldset>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

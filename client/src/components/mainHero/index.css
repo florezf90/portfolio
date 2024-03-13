@@ -7,3 +7,16 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 
 }
+
+#home, .icons  {
+  color: aliceblue;
+  fill: antiquewhite;
+
+}
+
+
+.btn {
+  color: aliceblue;
+  font-size: larger;
+
+}
