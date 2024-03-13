@@ -1,9 +1,9 @@
-import { useState } from "react";
+import React, { useState, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./index.css";
 import { buttonVariants, contentVariants, menuVariants } from "../../utils/animations";
 import {MenuIcon, CloseIcon} from "./menuIcons";
-import MenuItem from "./menuItem";
+const MenuItem = React.lazy(() => import("./menuItem"));
 import { scrollToSection } from "../../utils/animations";
 
 
@@ -80,7 +80,7 @@ const Navbar = () => {
             variants={buttonVariants}
             onClick={() => scrollToSection("#contact")}
             aria-label="Home"
-            className="px-3 py-2 text-2xl font-bold rounded border-2 border-transparent hover:border-gray-100"
+            className="px-3 py-2 text-2xl  rounded border-2 border-transparent hover:border-gray-100"
           >
             get in touch
           </motion.button>
@@ -114,6 +114,7 @@ const Navbar = () => {
                 <CloseIcon />
               </button>
               <ul className="flex flex-col mb-40 items-center justify-center text-2xl font-bold text-center">
+                <Suspense fallback={<div>Loading...</div>}>
                 <MenuItem sectionId="#home" toggleMenu={toggleMenu}>
                   Home
                 </MenuItem>
@@ -126,6 +127,7 @@ const Navbar = () => {
                 <MenuItem sectionId="#contact" toggleMenu={toggleMenu}>
                   Get In Touch
                 </MenuItem>
+                </Suspense>
               </ul>
             </motion.div>
             <motion.div

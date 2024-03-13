@@ -89,11 +89,11 @@ const Projects = () => {
 
   return (
     <main id="projects" className=" h-full  mx-auto flex justify-center">
-      <section className="flex flex-col justify-center w-10/12 bg-black">
+      <section className="flex flex-col justify-center container w-10/12 ">
         <header className=" justify-center flex my-20 ">
           <h1 className="text-white text-6xl">Projects</h1>
         </header>
-        <div className="filters h-full bg-slate-50 w-6/12 mx-auto flex flex-col lg:flex-row justify-center  lg:space-x-10">
+        <div className="filters h-full   w-6/12 mx-auto flex flex-col lg:flex-row justify-center  lg:space-x-10">
           <button
             className="filterbtn"
             type="button"
@@ -119,7 +119,7 @@ const Projects = () => {
             Full-Stack
           </button>
         </div>
-        <article className="flex flex-row flex-wrap w-full mx-auto h-full bg-red-950 mt-20">
+        <article className="flex flex-row flex-wrap w-full mx-auto h-full  mt-20">
           <ProjectsCard projectContent={displayedProjects} />
         </article>
       </section>

@@ -14,11 +14,8 @@ const AboutMe = () => {
 
 
   return (
-    <main
-      id="about"
-      className="h-full  flex items-center  justify-center bg-blue-500"
-    >
-      <article className="flex flex-col lg:flex-row w-10/12 mx-auto  h-full">
+    <main id="about" className="h-full  flex items-center  justify-center">
+      <article className="flex flex-col lg:flex-row w-10/12 mx-auto container">
         <div className="md:w-full lg:w-6/12 flex items-center justify-center p-4 h-full relative mb-20 mt-10">
           <img
             src={mewalking}

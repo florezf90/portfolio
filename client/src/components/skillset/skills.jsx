@@ -30,16 +30,16 @@ const SkillsAndCertifications = () => {
   const purifiedFrontendIcons = purifyIcons(frontendIcons);
 
   return (
-    <main className="bg-slate-500 h-full">
-      <section className="flex flex-col items-center justify-center bg-red-500 w-10/12 mx-auto">
+    <main>
+      <section className="flex flex-col items-center justify-center w-10/12 mx-auto skillset">
         <header>
           <h1 className="text-white text-6xl ntext-center mt-20">
             My Skillset
           </h1>
         </header>
         <div className="flex flex-col lg:flex-row items-center justify-center lg:space-x-36 mt-20 container">
-          <section className=" bg-white flex flex-col items-center justify-center spa  card mb-20">
-            <h2 className="text-black text-2xl text-center">Front-end </h2>
+          <section className="  flex flex-col items-center justify-center spa  card mb-20">
+            <h2 className=" text-2xl text-center skilltitle ">Front-end  </h2>
             <figure
               className="icon"
               dangerouslySetInnerHTML={{ __html: purifiedtitleIcons[0] }}
@@ -49,18 +49,18 @@ const SkillsAndCertifications = () => {
               {purifiedFrontendIcons.map((icon, index) => (
                 <figure key={index} className="mx-3 mt-4">
                   <div
-                    className="h-10 w-10"
+                    className="h-10 w-10 skillIcon"
                     dangerouslySetInnerHTML={{ __html: icon }}
                   />
-                  <figcaption className="text-center mt-1 text-xs">
+                  <figcaption className="text-center mt-3 text-xs skilltitle">
                     {frontEndTittles[index]}
                   </figcaption>
                 </figure>
               ))}
             </div>
           </section>
-          <section className=" bg-white flex flex-col items-center justify-center spa  card mb-20">
-            <h2 className="text-black text-2xl text-center">Tools </h2>
+          <section className=" flex flex-col items-center justify-center spa  card mb-20">
+            <h2 className=" text-2xl text-center skilltitle ">Tools </h2>
             <figure
               className="icon"
               dangerouslySetInnerHTML={{ __html: purifiedtitleIcons[1] }}
@@ -70,18 +70,18 @@ const SkillsAndCertifications = () => {
               {purifiedFrontendIcons.map((icon, index) => (
                 <figure key={index} className="mx-3 mt-4">
                   <div
-                    className="h-10 w-10"
+                    className="h-10 w-10 skillIcon"
                     dangerouslySetInnerHTML={{ __html: icon }}
                   />
-                  <figcaption className="text-center mt-1 text-xs">
+                  <figcaption className="text-center mt-1 text-xs skilltitle">
                     {frontEndTittles[index]}
                   </figcaption>
                 </figure>
               ))}
             </div>
           </section>
-          <section className=" bg-white flex flex-col items-center justify-center spa  card mb-20">
-            <h2 className="text-black text-2xl text-center">Back-end </h2>
+          <section className="  flex flex-col items-center justify-center spa  card mb-20">
+            <h2 className=" text-2xl text-center skilltitle ">Back-end </h2>
             <figure
               className="icon"
               dangerouslySetInnerHTML={{ __html: purifiedtitleIcons[2] }}
@@ -91,10 +91,10 @@ const SkillsAndCertifications = () => {
               {purifiedFrontendIcons.map((icon, index) => (
                 <figure key={index} className="mx-3 mt-4">
                   <div
-                    className="h-10 w-10"
+                    className="h-10 w-10 skillIcon"
                     dangerouslySetInnerHTML={{ __html: icon }}
                   />
-                  <figcaption className="text-center mt-1 text-xs">
+                  <figcaption className="text-center mt-1 text-xs skilltitle">
                     {frontEndTittles[index]}
                   </figcaption>
                 </figure>

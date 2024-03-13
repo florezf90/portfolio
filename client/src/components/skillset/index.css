@@ -1,14 +1,20 @@
+.skillset {
+ border: 0cap;
+} 
+
 .card {
     width: 90%;
 }
 
-.icon {
+.icon, .skilltitle {
     width: 30%;
     margin-top: 30px;
+    fill: aliceblue;
+    color: aliceblue;
 }
 
-.icon svg {
-    fill: black;
+.skillIcon {
+    fill: aliceblue;
 }
 
 .divider {

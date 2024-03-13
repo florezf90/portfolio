@@ -8,7 +8,7 @@ const ProjectsCard = ({ projectContent}) => {
     const { title, imgSrc, projectType, description, technologies, githubUrl, liveUrl } =
       project;
     return (
-      <div key={i} className=" bg-slate-600 lg:w-1/3 ">
+      <div key={i} className=" lg:w-1/3 ">
         <section className=" bg-white flex flex-col items-center justify-center mx-auto  card mb-20">
           <h2 className="text-black text-2xl text-center my-8">{title}</h2>
           <figure className="w-10/12" aria-label={projectType}>
