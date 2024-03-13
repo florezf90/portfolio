@@ -1,8 +1,15 @@
 .florez {
-  border-radius: 50%;
-  width: auto; /* Adjust the width to control the shape */
-  height: 100%; /* Set height to maintain aspect ratio */
-  object-fit: cover;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  margin-top: 3%;
+  border-radius: 56%;
+  width: 80%; /* Adjust the width to control the shape */
+  height: 92%; /* Set height to maintain aspect ratio */
+  /* object-fit: cover; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
 
+}
+
+@font-face {
+  font-family: 'Your Web Font';
+  src: url('path-to-your-font.woff2') format('woff2');
+  font-display: swap;
 }
