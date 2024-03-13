@@ -1,12 +1,9 @@
 
 
 .sidebar, #navbar {
-/* background: rgb(6,6,185);
-background: radial-gradient(circle, rgba(6,6,185,1) 0%, rgba(8,7,106,1) 62%, rgba(4,12,75,1) 100%); */
-background-color: navy;
+background: rgb(6,6,185);
+background: radial-gradient(circle, rgba(6,6,185,1) 0%, rgba(8,7,106,1) 62%, rgba(4,12,75,1) 100%);
 color: #dfdfdf;
-will-change: scroll-position;
-
 }
 
 .xbtn {

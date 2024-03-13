@@ -1,41 +1,34 @@
 /* eslint-disable react/prop-types */
 import { motion } from "framer-motion";
-import { scrollToSection } from "../../utils/animations";
+import {
+  scrollToSection,
+  sidebarvariants,
+  sideborderAnimation,
+} from "../../utils/animations";
 
-const variants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.4,
-      ease: "easeInOut",
-    },
-  },
-};
+
 
 const MenuItem = ({ sectionId, toggleMenu, children }) => {
   return (
     <motion.li
       initial="hidden"
       animate="visible"
-      variants={variants}
-      whileHover={{ scale: 1.5 }}
-      whileTap={{ scale: 2.5 }}
+      variants={sidebarvariants}
+      whileHover={{ scale: 2 }}
+      whileTap={{ scale: 4 }}
     >
-      <button
+      <motion.button
         onClick={() => {
           scrollToSection(sectionId);
           toggleMenu();
         }}
         aria-label={children}
-        className="  px-3 py-4 text-2xl font-bold rounded"
+        className="px-3 py-2 my-4 text-2xl font-bold rounded"
+        animate="pulse"
+        variants={sideborderAnimation}
       >
         {children}
-      </button>
+      </motion.button>
     </motion.li>
   );
 };
