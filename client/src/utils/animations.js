@@ -54,7 +54,39 @@ export const menuVariants = {
 };
 
 
+export const sidebarvariants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.9,
+      ease: "easeInOut",
+    },
+  },
+};
+
+export const sideborderAnimation = {
+  pulse: {
+    boxShadow: "0 0 0 4px rgba(255, 255, 255, 0.6)",
+    transition: {
+      boxShadow: {
+        repeat: Infinity,
+        repeatType: "mirror",
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
+  },
+};
+
+
 export   const scrollToSection = (sectionId) => {
   const section = document.querySelector(sectionId);
   section.scrollIntoView({ behavior: "smooth" });
 };
+
+
