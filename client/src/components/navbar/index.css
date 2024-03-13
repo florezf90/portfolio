@@ -5,6 +5,8 @@
 background: radial-gradient(circle, rgba(6,6,185,1) 0%, rgba(8,7,106,1) 62%, rgba(4,12,75,1) 100%); */
 background-color: navy;
 color: #dfdfdf;
+will-change: transform, opacity;
+
 }
 
 .xbtn {
