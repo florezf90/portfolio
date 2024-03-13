@@ -1,6 +1,6 @@
 import "./index.css";
-import mewalking from "../../assets/mewalking.jpg";
-import meLooking from "../../assets/looking.jpg";
+import mewalking from "../../assets/mewalking.webp";
+import meLooking from "../../assets/looking.webp";
 import purifyIcons from "../../utils/purify";
 import { siReadme } from "simple-icons";
 import myResume from "../../assets/Myresume.pdf"
