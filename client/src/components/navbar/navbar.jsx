@@ -80,7 +80,7 @@ const Navbar = () => {
             variants={buttonVariants}
             onClick={() => scrollToSection("#contact")}
             aria-label="Home"
-            className="px-3 py-2 text-2xl  rounded border-2 border-transparent hover:border-gray-100"
+            className="px-3 py-2 text-2xl font-bold rounded border-2 border-transparent hover:border-gray-100"
           >
             get in touch
           </motion.button>
@@ -104,7 +104,7 @@ const Navbar = () => {
               animate="open"
               exit="closed"
               variants={menuVariants}
-              className=" inset-y-0 left-0 justify-center z-50  sidebar w-4/5"
+              className="fixed inset-y-0 left-0 flex flex-col justify-center  z-50  sidebar w-3/4"
             >
               <button
                 className="absolute top-0 right-0 mt-4 mr-4 text-blue-800"
@@ -113,7 +113,7 @@ const Navbar = () => {
               >
                 <CloseIcon />
               </button>
-              <ul className="flex flex-col items-center justify-center text-2xl font-bold text-center">
+              <ul className="flex flex-col mb-40 items-center justify-center text-2xl font-bold text-center">
                 <MenuItem sectionId="#home" toggleMenu={toggleMenu}>
                   Home
                 </MenuItem>
@@ -132,7 +132,7 @@ const Navbar = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-opacity-25 z-40"
+              className="fixed inset-0 bg-blue-800 bg-opacity-25 z-40"
               onClick={toggleMenu}
             ></motion.div>
           </>
