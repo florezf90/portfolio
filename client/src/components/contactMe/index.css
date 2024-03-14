@@ -1,7 +1,4 @@
-/* .main {
-    background: rgb(7,39,119);
-    background: radial-gradient(circle, rgba(7,39,119,1) 0%, rgba(7,2,50,1) 50%, rgba(0,0,0,1) 100%);
-} */
+
 
 input {
     width: 80%;
@@ -10,4 +7,13 @@ input {
 textarea {
     width: 80%;
     height: 10rem;
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .main {
+        height: 120vh;
+    }
+    
 }

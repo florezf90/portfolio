@@ -1,7 +1,3 @@
-/* #projects {
-    background: rgb(7,39,119);
-    background: radial-gradient(circle, rgba(7,39,119,1) 0%, rgba(7,2,50,1) 50%, rgba(0,0,0,1) 100%);
-} */
 
 .filterbtn {
         margin: 5% 0;
@@ -24,4 +20,11 @@
 
       .container {
         border: 0cap;
+      }
+
+
+      @media  screen and (max-width: 500px) {
+#projects {
+  height: 120vh;
+}
       }
