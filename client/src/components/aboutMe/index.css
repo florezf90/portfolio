@@ -1,7 +1,4 @@
-/* #about {
-    background: rgb(7,39,119);
-    background: radial-gradient(circle, rgba(7,39,119,1) 0%, rgba(7,2,50,1) 50%, rgba(0,0,0,1) 100%);
-} */
+
 
 .mewalking {
     max-width: 55%;
@@ -29,4 +26,11 @@
     width: 80%;
     height: 80%;
     fill: aliceblue;
+}
+
+@media screen and (max-width: 600px) {
+    #about {
+        height: 120vh;
+    }
+    
 }
