@@ -28,9 +28,3 @@
     fill: aliceblue;
 }
 
-@media screen and (max-width: 600px) {
-    #about {
-        height: 120vh;
-    }
-    
-}

@@ -1,3 +1,4 @@
+
 export const buttonVariants = {
   hover: {
     scale: 1.05,
@@ -53,7 +54,6 @@ export const menuVariants = {
   },
 };
 
-
 export const sidebarvariants = {
   hidden: {
     opacity: 0,
@@ -83,10 +83,47 @@ export const sideborderAnimation = {
   },
 };
 
-
-export   const scrollToSection = (sectionId) => {
+export const scrollToSection = (sectionId) => {
   const section = document.querySelector(sectionId);
   section.scrollIntoView({ behavior: "smooth" });
 };
 
+export const borderTopRight = {
+  hidden: {
+    width: 0,
+    height: 0,
+    borderTopColor: "transparent",
+    borderRightColor: "transparent",
+  },
+  visible: {
+    width: "100%",
+    height: "100%",
+    borderTopColor: "#00FFF0", // Replace with your color
+    borderRightColor: "#00FFF0",
+    transition: {
+      delay: 2,
+      width: { duration: 0.25, ease: "easeOut" },
+      height: { duration: 0.25, ease: "easeOut", delay: 0.25 },
+    },
+  },
+};
 
+export const borderBottomLeft = {
+  hidden: {
+    width: 0,
+    height: 0,
+    borderBottomColor: "transparent",
+    borderLeftColor: "transparent",
+  },
+  visible: {
+    width: "100%",
+    height: "100%",
+    borderBottomColor: "#00FFF0", 
+    borderLeftColor: "#00FFF0",
+    transition: {
+      delay: 2,
+      width: { duration: 0.25, ease: "easeOut", delay: 0.5 },
+      height: { duration: 0.25, ease: "easeOut", delay: 0.75 },
+    },
+  },
+};
