@@ -10,10 +10,3 @@ textarea {
 }
 
 
-@media screen and (max-width: 600px) {
-
-    .main {
-        height: 120vh;
-    }
-    
-}

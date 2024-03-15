@@ -19,13 +19,34 @@
 
 .divider {
     width: 70%;
-    border-top: 1px solid black;
+    border-top: 1px solid white;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
-@media screen and (max-width: 1300px) {
-.container {
-    flex-direction: column;
+
+.card {
+  position: relative;
+  border:  white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  }
+
+.border-draw {
+  position: absolute;
+  border: 2px solid transparent;
 }
-    
+
+.border-draw-top-right {
+  top: 0;
+  left: 0;
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+}
+
+.border-draw-bottom-left {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
 }
