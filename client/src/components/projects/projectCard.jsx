@@ -1,13 +1,26 @@
 /* eslint-disable react/prop-types */
 import "./index.css";
-import {  sideborderAnimation, drawBorderAnimation } from "../../utils/animations";
-import { motion } from "framer-motion";
-
+import {  sideborderAnimation, borderTopRight, borderBottomLeft } from "../../utils/animations";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import React from "react";
 
 const ProjectsCard = ({ projectContent}) => {
 
+const controlsBottomLeft = useAnimation();
+const controlsTopRight = useAnimation();
 
-
+const { ref, inView} = useInView({threshold: 1, triggerOnce: true});
+React.useEffect(() => {
+  let animationTimeout;
+  if (inView) {
+    animationTimeout = setTimeout(() => {
+     controlsBottomLeft.start("visible");
+     controlsTopRight.start("visible");
+    }, 200);
+  }
+  return () => clearTimeout(animationTimeout);
+}, [controlsBottomLeft, controlsTopRight, inView]);
 
     const { title, imgSrc, projectType, description, technologies, githubUrl, liveUrl } =
       projectContent;
@@ -15,11 +28,25 @@ const ProjectsCard = ({ projectContent}) => {
       <div>
         <motion.section
           initial="rest"
-          whileHover="hover"
-          variants={drawBorderAnimation}
+          whileHover={{ scale: 1.05 }}
+          animate="visible"
           className="  flex flex-col items-center justify-center mx-auto  card mb-20"
         >
-          <h2 className="text-white text-2xl text-center my-8">{title}</h2>
+          <motion.div
+            className="border-draw border-draw-top-right"
+            variants={borderTopRight}
+            initial="hidden"
+            animate={controlsTopRight}
+          />
+          <motion.div
+            className="border-draw border-draw-bottom-left"
+            variants={borderBottomLeft}
+            initial="hidden"
+            animate={controlsBottomLeft}
+          />
+          <h2 ref={ref} className="text-white text-2xl text-center my-8">
+            {title}
+          </h2>
           <figure className="w-10/12" aria-label={projectType}>
             <img
               src={imgSrc}
