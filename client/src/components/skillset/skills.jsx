@@ -52,10 +52,10 @@ const skillCardsData = [
 ];
 
   return (
-    <main>
-      <section className="flex flex-col items-center justify-center w-10/12 mx-auto skillset">
+    <main className="mb-20">
+      <section className="flex flex-col items-center justify-center w-10/12 mx-auto skillset ">
         <header>
-          <h1 className="text-white text-6xl ntext-center mt-20">
+          <h1 className="text-white text-6xl ntext-center mt-20 mb-10">
             My Skillset
           </h1>
         </header>

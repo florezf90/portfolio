@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {motion, useAnimation} from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import React from "react";
@@ -15,6 +16,7 @@ const SkillCard = ({title, mainIcon, technologies, technologiesTtitles}) => {
   React.useEffect(() => {
     let animationTiemout;
     if (inView) {
+        console.log("inview")
       animationTiemout = setTimeout(() => {
         controlsTopRight.start("visible");
         controlsBottomLeft.start("visible");
