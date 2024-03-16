@@ -98,7 +98,7 @@ export const borderTopRight = {
   visible: {
     width: "100%",
     height: "100%",
-    borderTopColor: "#00FFF0", // Replace with your color
+    borderTopColor: "#00FFF0", 
     borderRightColor: "#00FFF0",
     transition: {
       delay: 2,
@@ -124,6 +124,71 @@ export const borderBottomLeft = {
       delay: 2,
       width: { duration: 0.25, ease: "easeOut", delay: 0.5 },
       height: { duration: 0.25, ease: "easeOut", delay: 0.75 },
+    },
+  },
+};
+
+export const searchBarAnimation = {
+  initial: {
+    scale: 1,
+    color: "#ffffff", // initial text color to white
+    background: "linear-gradient(90deg, transparent 100%, transparent 0%)", // Initial background to transparent
+  },
+  hover: {
+    scale: 1.1,
+    color: "#000000", // text color to black
+    background: [
+      "linear-gradient(90deg, #ffffff 0%, transparent 0%)",
+      "linear-gradient(90deg, #ffffff 100%, transparent 0%)",
+    ],
+    transition: {
+      background: { duration: 0.3, ease: "easeOut" },
+      color: { duration: 0.1 },
+    },
+  },
+  tap: {
+    scale: 0.95,
+    color: "#000000", // text color to black
+    background: "linear-gradient(90deg, #ffffff 100%, transparent 0%)",
+    transition: { duration: 0.3, ease: "easeOut" },
+  },
+};
+
+
+export const projectCardAnimation = {
+  hidden: {
+    opacity: 0,
+    scale: 0.8,
+    transition: { duration: 0.3 },
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 260,
+      damping: 20,
+    },
+  },
+};
+
+
+export const drawBorderAnimation = {
+  rest: {
+    borderColor: "rgba(255, 255, 255, 0)", // Transparent border
+    borderWidth: "2px",
+    borderStyle: "solid",
+    transition: {
+      duration: 0.2,
+      ease: "easeInOut",
+    },
+  },
+  hover: {
+    scale: 1.1,
+    borderColor: "rgba(255, 255, 255, 1)", // Solid white border
+    transition: {
+      duration: 0.4,
+      ease: "easeInOut",
     },
   },
 };
