@@ -8,99 +8,107 @@ import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import {  projectCardAnimation, searchBarAnimation } from "../../utils/animations";
 
 const Projects = () => {
-     
+  const iconObjects = [siHtml5, siCss3, siNodedotjs, siJavascript];
 
-    const iconObjects = [siHtml5, siCss3, siNodedotjs, siJavascript];
+  const projectIcons = iconObjects.map((icon) => icon.svg);
+  const projectTitltes = iconObjects.map((icon) => icon.title);
+  const projectIconsPurified = purifyIcons(projectIcons);
 
-    const projectIcons = iconObjects.map((icon) => icon.svg);
-    const projectTitltes = iconObjects.map((icon) => icon.title);
-    const projectIconsPurified = purifyIcons(projectIcons);
+  const projectTechnologies = [
+    {
+      name: projectTitltes,
+      icon: projectIconsPurified,
+    },
+  ];
 
-    const projectTechnologies = [
-        {
-            name: projectTitltes,
-            icon: projectIconsPurified
-        }
-    ]
+  const generateTechJsx = projectTechnologies.map((tech, techIndex) =>
+    tech.icon.map((icon, iconIndex) => (
+      <figure key={`${techIndex}${iconIndex}`} className="mx-3 mt-4">
+        <div
+          className="h-10 w-10 mx-3 technologies"
+          dangerouslySetInnerHTML={{ __html: icon }}
+        />
+        <figcaption className="text-center mt-4 text-white">
+          {tech.name[iconIndex]}
+        </figcaption>
+      </figure>
+    ))
+  );
 
-    const generateTechJsx = projectTechnologies.map((tech, techIndex) => tech.icon.map((icon, iconIndex) => 
-    <figure key={`${techIndex}${iconIndex}`} className="mx-3 mt-4">
-        <div className="h-10 w-10 mx-3 technologies"
-        dangerouslySetInnerHTML={{ __html:icon}}/>
-        <figcaption className="text-center mt-4 text-white">{tech.name[iconIndex]}</figcaption>
-    </figure>))
-
-    const projects = [
-      {
-        title: "Project back-end-api",
-        imgSrc: "https://via.placeholder.com/300",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
-        technologies: generateTechJsx,
-        githubUrl: "https://github.com",
-        liveUrl: "https://github.com",
-        projectType: "back-end-api",
-      },
-      {
-        title: "Project single-page",
-        imgSrc: "https://via.placeholder.com/300",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
-        technologies: generateTechJsx,
-        githubUrl: "https://github.com",
-        liveUrl: "https://github.com",
-        projectType: "single-page",
-      },
-      {
-        title: "Project 2 single-page",
-        imgSrc: "https://via.placeholder.com/300",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
-        technologies: generateTechJsx,
-        githubUrl: "https://github.com",
-        liveUrl: "https://github.com",
-        projectType: "single-page",
-      },
-      {
-        title: "Project full-stack",
-        imgSrc: "https://via.placeholder.com/300",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
-        technologies: generateTechJsx,
-        githubUrl: "https://github.com",
-        liveUrl: "https://github.com",
-        projectType: "full-stack",
-      },
-      {
-        title: "Project 2 back-end-api",
-        imgSrc: "https://via.placeholder.com/300",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
-        technologies: generateTechJsx,
-        githubUrl: "https://github.com",
-        liveUrl: "https://github.com",
-        projectType: "back-end-api",
-      },
-    ];
+  const projects = [
+    {
+      title: "Project back-end-api",
+      imgSrc: "https://via.placeholder.com/300",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
+      technologies: generateTechJsx,
+      githubUrl: "https://github.com",
+      liveUrl: "https://github.com",
+      projectType: "back-end-api",
+    },
+    {
+      title: "Project single-page",
+      imgSrc: "https://via.placeholder.com/300",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
+      technologies: generateTechJsx,
+      githubUrl: "https://github.com",
+      liveUrl: "https://github.com",
+      projectType: "single-page",
+    },
+    {
+      title: "Project 2 single-page",
+      imgSrc: "https://via.placeholder.com/300",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
+      technologies: generateTechJsx,
+      githubUrl: "https://github.com",
+      liveUrl: "https://github.com",
+      projectType: "single-page",
+    },
+    {
+      title: "Project full-stack",
+      imgSrc: "https://via.placeholder.com/300",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
+      technologies: generateTechJsx,
+      githubUrl: "https://github.com",
+      liveUrl: "https://github.com",
+      projectType: "full-stack",
+    },
+    {
+      title: "Project 2 back-end-api",
+      imgSrc: "https://via.placeholder.com/300",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
+      technologies: generateTechJsx,
+      githubUrl: "https://github.com",
+      liveUrl: "https://github.com",
+      projectType: "back-end-api",
+    },
+  ];
 
   const [displayedProjects, setDisplayedProjects] = useState(projects);
+  const [showAllButton, setShowAllButton] = useState(false);
   const controls = useAnimation();
 
+  const handleFilterClick = async (filterType) => {
 
-  useEffect(() => {
-    controls.start("visible");
-  }, [displayedProjects,controls]);
-
-const handleFilterClick = (filterType) => {
-  // Start the exit animation
-  controls.start("hidden").then(() => {
-    // Once the exit animation is complete, update the state
+    await controls.start("hidden");
+    setShowAllButton(true);
     const filteredProjects = filterProjects(projects, filterType);
     setDisplayedProjects(filteredProjects);
-    // After the state is updated, start the enter animation
-    controls.start("visible");
-  });
-};
+  };
+
+  useEffect(() => {
+    const showProjects = async () => {
+      await controls.start("visible");
+    };
+
+    if (displayedProjects.length > 0) {
+      showProjects();
+    }
+  }, [displayedProjects, controls]); 
 
   return (
     <main id="projects" className=" h-full  mx-auto flex justify-center">
@@ -109,17 +117,19 @@ const handleFilterClick = (filterType) => {
           <h1 className="text-white text-6xl">Projects</h1>
         </header>
         <div className="filters h-full   w-6/12 mx-auto flex flex-col lg:flex-row justify-center  lg:space-x-10">
-          <motion.button
-            initial="initial"
-            whileHover="hover"
-            whileTap="tap"
-            variants={searchBarAnimation}
-            className="filterbtn"
-            type="button"
-            onClick={() => handleFilterClick("All")}
-          >
-            All
-          </motion.button>
+          {showAllButton && (
+            <motion.button
+              initial="initial"
+              whileHover="hover"
+              whileTap="tap"
+              variants={searchBarAnimation}
+              className="filterbtn"
+              type="button"
+              onClick={() => handleFilterClick("All")}
+            >
+              All
+            </motion.button>
+          )}
           <motion.button
             initial="initial"
             whileHover="hover"

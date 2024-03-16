@@ -25,13 +25,4 @@
   fill: aliceblue;
 }
 
-.card {
-position: relative;
-pointer-events: auto;
 
-}
-
-.card button {
-  position: relative; /* This makes the z-index effective */
-  z-index: 10; /* Ensures that the button is above the scaled card and borders */
-}
