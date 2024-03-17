@@ -1,7 +1,9 @@
 
 
-input {
+input, textarea{
     width: 80%;
+    background-color: transparent;
+
 }
 
 textarea {
@@ -10,3 +12,18 @@ textarea {
 }
 
 
+.sectionContainer, .mapContainer {
+
+     border: 0cap;
+}
+
+fieldset {
+    border: white 3px solid;
+    padding: 10px;
+
+}
+
+label > p {
+    font-weight: 600;
+    color: aliceblue;
+}
