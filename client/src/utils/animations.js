@@ -192,3 +192,17 @@ export const drawBorderAnimation = {
     },
   },
 };
+
+export const mapbackgroundVariants = {
+  animate: {
+    backgroundColor: ["#ffffff", "#00FFF0", "#ffffff"], // White to #00FFF0 and back to white
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+      repeat: Infinity,
+      repeatType: "reverse",
+    },
+  },
+};
+
+

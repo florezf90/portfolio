@@ -1,15 +1,19 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import { GoogleMap, useJsApiLoader, Marker,  } from "@react-google-maps/api";
+
+
+
 
 const containerStyle = {
-  width: "100%",
-  height: "100%",
+  width: "99%",
+  height: "99%",
+  margin: "0 auto",
 };
 
 const center = {
-  lat: 29.703,
-  lng: -98.12,
+  lat: 29.890,
+  lng: -97.920,
 };
 
 function MapComponent() {
@@ -22,7 +26,7 @@ function MapComponent() {
 
   const onLoad = React.useCallback(function callback(map) {
     // Set the map's zoom level here if needed
-    map.setZoom(10);
+    map.setZoom(8);
     setMap(map);
   }, []);
 
@@ -30,14 +34,23 @@ function MapComponent() {
     setMap(null);
   }, []);
 
+  const options = {
+    fullscreenControl: false,
+    mapTypeControl: false,
+  };
+
   return isLoaded ? (
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      zoom={10} // Set the initial zoom level here
+      zoom={8} // Set the initial zoom level here
       onLoad={onLoad}
       onUnmount={onUnmount}
+      options={options}
     >
+
+      <Marker position={center} 
+      title="San Marcos, TX"/>
 
     </GoogleMap>
   ) : (
