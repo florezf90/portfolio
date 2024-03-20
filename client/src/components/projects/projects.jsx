@@ -1,57 +1,53 @@
 import "./index.css";
-import purifyIcons from "../../utils/purify";
-import { siHtml5, siCss3, siNodedotjs, siJavascript } from "simple-icons";
-import ProjectsCard from "./projectCard";
+import { projectTechnologies } from "../../utils/Icons";
+import DealerTracker from '../../assets/Dealer.webp';
+ import ProjectsCard from "./projectCard";
 import { useEffect, useState } from "react";
 import filterProjects from "../../utils/filter";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import {  projectCardAnimation, searchBarAnimation } from "../../utils/animations";
 
 const Projects = () => {
-  const iconObjects = [siHtml5, siCss3, siNodedotjs, siJavascript];
 
-  const projectIcons = iconObjects.map((icon) => icon.svg);
-  const projectTitltes = iconObjects.map((icon) => icon.title);
-  const projectIconsPurified = purifyIcons(projectIcons);
-
-  const projectTechnologies = [
-    {
-      name: projectTitltes,
-      icon: projectIconsPurified,
-    },
-  ];
-
-  const generateTechJsx = projectTechnologies.map((tech, techIndex) =>
-    tech.icon.map((icon, iconIndex) => (
-      <figure key={`${techIndex}${iconIndex}`} className="mx-3 mt-4">
-        <div
-          className="h-10 w-10 mx-3 technologies"
-          dangerouslySetInnerHTML={{ __html: icon }}
-        />
-        <figcaption className="text-center mt-4 text-white">
-          {tech.name[iconIndex]}
-        </figcaption>
-      </figure>
-    ))
-  );
+function  generateProjects(icons, titles) {
+  return icons.map((icon, index) => (
+    <figure key={index} className="mx-3 mt-4">
+      <div
+        className="h-10 w-10 mx-auto technologies"
+        dangerouslySetInnerHTML={{ __html: icon }}
+      />
+      <figcaption className="text-center mt-4 text-white">
+        {titles[index]}
+      </figcaption>
+    </figure>
+  ));
+}
 
   const projects = [
     {
-      title: "Project back-end-api",
-      imgSrc: "https://via.placeholder.com/300",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
-      technologies: generateTechJsx,
-      githubUrl: "https://github.com",
-      liveUrl: "https://github.com",
-      projectType: "back-end-api",
+      title: "Dealer Data Tracking App",
+      imgSrc: DealerTracker,
+      description: `Growth is the most crucial part of a small business; if it's not doing so, the company is dying, and one of the most effective ways to prioritize growth is by following its daily performance data.          
+
+      That is how we came up with the idea of creating an employee dashboard. This dealer data tracker application will allow the managers of small and medium-sized companies to keep records of their employees, their KPIs, 
+      and how they've been doing overtime.`,
+      technologies: generateProjects(
+        projectTechnologies[0].icon,
+        projectTechnologies[0].name
+      ),
+      githubUrl: "https://github.com/florezf90/dealer-data-tracker",
+      liveUrl: "https://dealer-data-tracker.onrender.com/",
+      projectType: "full-stack",
     },
     {
       title: "Project single-page",
       imgSrc: "https://via.placeholder.com/300",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
-      technologies: generateTechJsx,
+      technologies: generateProjects(
+        projectTechnologies[1].icon,
+        projectTechnologies[1].name
+      ),
       githubUrl: "https://github.com",
       liveUrl: "https://github.com",
       projectType: "single-page",
@@ -61,27 +57,36 @@ const Projects = () => {
       imgSrc: "https://via.placeholder.com/300",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
-      technologies: generateTechJsx,
+      technologies: generateProjects(
+        projectTechnologies[0].icon,
+        projectTechnologies[1].name
+      ),
       githubUrl: "https://github.com",
       liveUrl: "https://github.com",
       projectType: "single-page",
     },
     {
-      title: "Project full-stack",
+      title: "Project back-end-api",
       imgSrc: "https://via.placeholder.com/300",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
-      technologies: generateTechJsx,
+      technologies: generateProjects(
+        projectTechnologies[0].icon,
+        projectTechnologies[1].name
+      ),
       githubUrl: "https://github.com",
       liveUrl: "https://github.com",
-      projectType: "full-stack",
+      projectType: "back-end-api",
     },
     {
       title: "Project 2 back-end-api",
-      imgSrc: "https://via.placeholder.com/300",
+      imgSrc: "",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
-      technologies: generateTechJsx,
+      technologies: generateProjects(
+        projectTechnologies[0].icon,
+        projectTechnologies[1].name
+      ),
       githubUrl: "https://github.com",
       liveUrl: "https://github.com",
       projectType: "back-end-api",
