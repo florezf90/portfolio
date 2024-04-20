@@ -14,8 +14,11 @@
     "@react-google-maps/api": "^2.19.3",
     "dompurify": "^3.0.9",
     "framer-motion": "^11.0.8",
+    "i18next": "^23.11.2",
+    "i18next-browser-languagedetector": "^7.2.1",
     "nodemailer": "^6.9.10",
     "react": "^18.2.0",
+    "react-i18next": "^14.1.0",
     "react-intersection-observer": "^9.8.1",
     "simple-icons": "^11.6.0"
   },

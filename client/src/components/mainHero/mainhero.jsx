@@ -6,8 +6,6 @@ import { scrollToSection } from "../../utils/animations";
 import { motion } from "framer-motion";
 import { buttonVariants } from "../../utils/animations";
 const MainHero = () => {
-
-
   const svgStrings = [siReact.svg, siTailwindcss.svg];
   const purifiedIcons = purifyIcons(svgStrings);
 

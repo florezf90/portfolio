@@ -37,3 +37,17 @@ color: #dfdfdf;
 .button-neon:hover {
   animation: neon 1.5s ease-in-out infinite alternate;
 }
+
+@media screen and (min-width: 1022px) and (max-width: 1468px) {
+  #language {
+    margin-right: -20px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  #language {
+    position: relative;
+  }
+  
+}
