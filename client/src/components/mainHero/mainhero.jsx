@@ -5,20 +5,22 @@ import "./index.css"
 import { scrollToSection } from "../../utils/animations";
 import { motion } from "framer-motion";
 import { buttonVariants } from "../../utils/animations";
+import { useTranslation } from "react-i18next";
+
 const MainHero = () => {
   const svgStrings = [siReact.svg, siTailwindcss.svg];
   const purifiedIcons = purifyIcons(svgStrings);
+ const {t} = useTranslation()
 
   return (
     <div id="home" className="h-full flex items-center justify-center ">
       <article className="flex flex-col lg:flex-row w-10/12 mx-auto mb-20 ">
         <header className="lg:w-6/12 md:w-full  p-4 flex flex-col items-center justify-center">
           <h1 className=" text-6xl font-bold my-10 text-center">
-            Hello, I&apos;m felipe florez
+            {t("introduction")}
           </h1>
           <p className="text-2xl  mb-10 text-center">
-            an engaging full-stack developer based in San Antonio, TX who is
-            commited to deliver high-quality solutions
+            {t("description")}
           </p>
           <div className="mb-4">
             <div className="flex flex-row">
@@ -40,7 +42,7 @@ const MainHero = () => {
               aria-label="Home"
               className="px-3 my-4 py-2 text-2xl  rounded border-2 border-transparent hover:border-gray-100"
             >
-              My work
+              {t("MyWork")}
             </motion.button>
 
             <motion.button
@@ -51,7 +53,7 @@ const MainHero = () => {
               aria-label="Home"
               className="px-3 py-2 my-4 text-2xl  rounded border-2 border-transparent hover:border-gray-100"
             >
-              get in touch
+              {t("getInTouch")}
             </motion.button>
           </div>
         </header>
