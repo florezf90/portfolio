@@ -4,12 +4,14 @@ import meLooking from "../../assets/looking.webp";
 import purifyIcons from "../../utils/purify";
 import { siReadme } from "simple-icons";
 import myResume from "../../assets/Myresume.pdf"
+import { useTranslation } from "react-i18next";
 
 
 const AboutMe = () => {
 
   const readMeIcon = [siReadme.svg];
  const purifiedReadMeIcon = purifyIcons(readMeIcon);
+ const {t} = useTranslation();
 
 
 
@@ -30,7 +32,7 @@ const AboutMe = () => {
         </div>
         <header className="lg:w-6/12 md:w-full p-4 flex flex-col items-start justify-center">
           <h1 className="text-white text-6xl font-bold mb-10 text-center">
-            About me
+            {t("about")}
           </h1>
           <p className="text-white text-2xl mb-10 text-center">
             Thank you for taking the time to visit my website. My name is
@@ -39,17 +41,17 @@ const AboutMe = () => {
 
           <div className="flex flex-col md:flex-row items-start md:items-center md:justify-start md:space-x-28 mt-5">
             <div>
-              <h1 className="text-white text-2xl font-bold">Name:</h1>
-              <p className="text-white mb-8">felipe florez</p>
+              <h1 className="text-white text-2xl font-bold">{t("name")} :</h1>
+              <p className="text-white mb-8">{t("felipe")}</p>
             </div>
             <div>
-              <h1 className="text-white text-2xl font-bold">Education:</h1>
+              <h1 className="text-white text-2xl font-bold">{t("education")} :</h1>
               <p className="text-white mb-8">UTSA Coding Bootcamp (2024)</p>
             </div>
           </div>
           <div className="flex flex-col md:flex-row items-start md:items-center md:justify-start space-x-0 md:space-x-20 mt-5">
             <div>
-              <h1 className="text-white text-2xl font-bold">Resume:</h1>
+              <h1 className="text-white text-2xl font-bold">{t("resume")} :</h1>
               <a href={myResume}>
                 <div
                   dangerouslySetInnerHTML={{ __html: purifiedReadMeIcon }}

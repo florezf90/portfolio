@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // eslint-disable-next-line react/prop-types
-const LanguageMenu = ({ animations, buttonAnimation, closesidebar }) => {
+const LanguageMenu = ({ animations, buttonAnimation, closesidebar, language }) => {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const { i18n } = useTranslation();
   const toggleLanguage = () => {
@@ -26,7 +26,7 @@ const LanguageMenu = ({ animations, buttonAnimation, closesidebar }) => {
         aria-label="language"
         className="  px-3 mt-1 py-3 text-2xl  rounded border-2 border-transparent hover:border-gray-100"
       >
-        Language
+        {language}
       </motion.button>
       <div id="language" className="absolute right-6 ">
         {isLanguageOpen && (

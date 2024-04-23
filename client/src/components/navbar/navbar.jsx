@@ -6,13 +6,15 @@ import {MenuIcon, CloseIcon} from "./menuIcons";
 const MenuItem = React.lazy(() => import("./menuItem"));
 import { scrollToSection } from "../../utils/animations";
 import LanguageMenu from "./languageMenu";
+import  {useTranslation} from "react-i18next"
 
 
 
 const Navbar = () => {
 
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const {t} = useTranslation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -55,7 +57,7 @@ const Navbar = () => {
             variants={buttonVariants}
             className="px-3 py-2 text-2xl  rounded border-2 border-transparent hover:border-gray-100"
           >
-            Home
+            {t("home")}
           </motion.button>
           <motion.button
             whileHover="hover"
@@ -65,7 +67,7 @@ const Navbar = () => {
             aria-label="Home"
             className="px-3 py-2 text-2xl  rounded border-2 border-transparent hover:border-gray-100"
           >
-            About
+            {t("about")}
           </motion.button>
           <motion.button
             whileHover="hover"
@@ -75,7 +77,7 @@ const Navbar = () => {
             aria-label="Home"
             className="px-3 py-2 text-2xl  rounded border-2 border-transparent hover:border-gray-100"
           >
-            Projects
+            {t("projects")}
           </motion.button>
           <motion.button
             whileHover="hover"
@@ -85,9 +87,9 @@ const Navbar = () => {
             aria-label="Home"
             className="px-3 py-2 text-2xl  rounded border-2 border-transparent hover:border-gray-100"
           >
-            Get In Touch
+            {t("getInTouch")}
           </motion.button>
-          <LanguageMenu animations={sideborderAnimation} buttonAnimation={sideborderAnimation} />
+          <LanguageMenu animations={sideborderAnimation} buttonAnimation={sideborderAnimation} language={t("language")} />
         </div>
         <motion.button
           whileHover="hover"
@@ -120,18 +122,18 @@ const Navbar = () => {
               <ul  className="flex flex-col  items-center justify-center text-2xl font-bold text-center">
                 <Suspense fallback={<div>Loading...</div>}>
                   <MenuItem sectionId="#home" toggleMenu={toggleMenu}>
-                    Home
+                    {t("home")}
                   </MenuItem>
                   <MenuItem sectionId="#about" toggleMenu={toggleMenu}>
-                    About
+                    {t("about")}
                   </MenuItem>
                   <MenuItem sectionId="#projects" toggleMenu={toggleMenu}>
-                    Projects
+                    {t("projects")}
                   </MenuItem>
                   <MenuItem sectionId="#contact" toggleMenu={toggleMenu} >
-                    Get In Touch
+                    {t("getInTouch")}
                   </MenuItem>
-                  <LanguageMenu buttonAnimation={sideborderAnimation} closesidebar={toggleMenu} />
+                  <LanguageMenu buttonAnimation={sideborderAnimation} closesidebar={toggleMenu}  language={t("language")}/>
                 </Suspense>
               </ul>
             </motion.div>
