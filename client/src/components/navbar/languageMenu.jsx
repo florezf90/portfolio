@@ -1,12 +1,20 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 // eslint-disable-next-line react/prop-types
-const LanguageMenu = ({ animations, buttonAnimation }) => {
+const LanguageMenu = ({ animations, buttonAnimation, closesidebar }) => {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+  const { i18n } = useTranslation();
   const toggleLanguage = () => {
     setIsLanguageOpen(!isLanguageOpen);
   };
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    toggleLanguage();
+  };
+
   return (
     <div>
       <motion.button
@@ -34,6 +42,10 @@ const LanguageMenu = ({ animations, buttonAnimation }) => {
                 whileTap={{ scale: 1.5 }}
                 className="text-white mt-3 mb-4 p-2  rounded border-2 border-transparent hover:border-gray-100"
                 id="español"
+                onClick={() => {
+                  changeLanguage("es");
+                  closesidebar();
+                }}
               >
                 español
               </motion.button>
@@ -44,6 +56,10 @@ const LanguageMenu = ({ animations, buttonAnimation }) => {
                 id="english"
                 animate="pulse"
                 variants={animations}
+                onClick={() => {
+                  changeLanguage("en");
+                  closesidebar();
+                }}
               >
                 english
               </motion.li>
@@ -53,6 +69,10 @@ const LanguageMenu = ({ animations, buttonAnimation }) => {
                 className="text-white  mb-4 p-2  rounded border-2 border-transparent hover:border-gray-100"
                 animate="pulse"
                 id="deutsch"
+                onClick={() => {
+                  changeLanguage("de");
+                  closesidebar();
+                }}
               >
                 Deutsch
               </motion.li>
@@ -63,6 +83,10 @@ const LanguageMenu = ({ animations, buttonAnimation }) => {
                 animate="pulse"
                 variants={animations}
                 id="russian"
+                onClick={() => {
+                  changeLanguage("ru");
+                  closesidebar();
+                }}
               >
                 Русский
               </motion.li>
