@@ -131,7 +131,7 @@ const Navbar = () => {
                   <MenuItem sectionId="#contact" toggleMenu={toggleMenu} >
                     Get In Touch
                   </MenuItem>
-                  <LanguageMenu buttonAnimation={sideborderAnimation} />
+                  <LanguageMenu buttonAnimation={sideborderAnimation} closesidebar={toggleMenu} />
                 </Suspense>
               </ul>
             </motion.div>
