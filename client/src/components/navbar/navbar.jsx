@@ -67,7 +67,7 @@ const Navbar = () => {
             aria-label="Home"
             className="px-3 py-2 text-2xl  rounded border-2 border-transparent hover:border-gray-100"
           >
-            {t("about")}
+            {t("abouttitle")}
           </motion.button>
           <motion.button
             whileHover="hover"
@@ -125,7 +125,7 @@ const Navbar = () => {
                     {t("home")}
                   </MenuItem>
                   <MenuItem sectionId="#about" toggleMenu={toggleMenu}>
-                    {t("about")}
+                    {t("abouttitle")}
                   </MenuItem>
                   <MenuItem sectionId="#projects" toggleMenu={toggleMenu}>
                     {t("projects")}
