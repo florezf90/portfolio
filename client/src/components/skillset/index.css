@@ -50,3 +50,7 @@
   border-bottom: 2px solid transparent;
   border-left: 2px solid transparent;
 }
+
+.marginRightEnTitle {
+  margin-left: 40px;
+}

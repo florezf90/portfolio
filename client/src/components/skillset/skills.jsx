@@ -43,6 +43,7 @@ const skillCardsData = [
   {
     title: translationKeys[1],
     mainIcon: purifiedtitleIcons[1],
+    titleStyle: {"margin-right": "50px"},
     technologies: purifiedFrontendIcons,
     technologiesTtitles: frontEndTittles,
   },
@@ -70,6 +71,7 @@ const skillCardsData = [
               mainIcon={data.mainIcon}
               technologies={data.technologies}
               technologiesTtitles={data.technologiesTtitles}
+              titleStyle={data.titleStyle}
             />
           ))}
         </div>
