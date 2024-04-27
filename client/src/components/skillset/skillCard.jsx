@@ -5,7 +5,7 @@ import React from "react";
 import {borderBottomLeft, borderTopRight} from "../../utils/animations";
 import "./index.css";
 
-const SkillCard = ({title, mainIcon, technologies, technologiesTtitles}) => {
+const SkillCard = ({title, titleStyle, mainIcon, technologies, technologiesTtitles}) => {
   const controlsTopRight = useAnimation();
   const controlsBottomLeft = useAnimation();
   const { ref, inView } = useInView({
@@ -31,12 +31,14 @@ const SkillCard = ({title, mainIcon, technologies, technologiesTtitles}) => {
         className="h-10 w-10 skillIcon"
         dangerouslySetInnerHTML={{ __html: icon }}
       />
-      {/* Assuming you have titles for each technology */}
-      <figcaption className="text-center mt-1 text-xs skilltitle">
+
+      <figcaption className="text-center mt-3 text-xs skilltitle">
         {technologiesTtitles[index]}
       </figcaption>
     </figure>
   ));
+
+  const titleclass = title === 'tools' ? 'marginRightEnTitle' : '';
 
   return (
     <motion.section
@@ -55,7 +57,7 @@ const SkillCard = ({title, mainIcon, technologies, technologiesTtitles}) => {
         initial="hidden"
         animate={controlsBottomLeft}
       />
-      <h2 className=" text-2xl text-center skilltitle ">{title}</h2>
+      <h2 className= {`text-2xl text-center skilltitle ${titleclass}`}   style={titleStyle}>{title}</h2>
       <figure className="icon" dangerouslySetInnerHTML={{ __html: mainIcon }} />
       <hr className="divider" />
       <div className="w-full flex flex-row flex-wrap items-center justify-center mb-4">
