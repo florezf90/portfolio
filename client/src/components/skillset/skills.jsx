@@ -11,6 +11,7 @@ import {
 } from "simple-icons";
 import purifyIcons from "../../utils/purify";
 import SkillCard from "./skillCard";
+import { useTranslation } from "react-i18next";
 
 const SkillsAndCertifications = () => {
   const svgStrings = [siHtml5.svg, siBookstack.svg, siMicrosoftsqlserver.svg];
@@ -24,6 +25,8 @@ const SkillsAndCertifications = () => {
     
   ];
 
+  const { t } = useTranslation();
+  const translationKeys = t("skillcards", { returnObjects: true });
   const frontendIcons = frontendIconsObjects.map((icon) => icon.svg);
   const frontEndTittles = frontendIconsObjects.map((icon) => icon.title);
 
@@ -32,19 +35,19 @@ const SkillsAndCertifications = () => {
 
 const skillCardsData = [
   {
-    title: "Front-end",
+    title: translationKeys[0],
     mainIcon: purifiedtitleIcons[0],
     technologies: purifiedFrontendIcons,
     technologiesTtitles: frontEndTittles,
   },
   {
-    title: "Tools",
+    title: translationKeys[1],
     mainIcon: purifiedtitleIcons[1],
     technologies: purifiedFrontendIcons,
     technologiesTtitles: frontEndTittles,
   },
   {
-    title: "Back-end",
+    title: translationKeys[2],
     mainIcon: purifiedtitleIcons[2],
     technologies: purifiedFrontendIcons,
     technologiesTtitles: frontEndTittles,
@@ -56,7 +59,7 @@ const skillCardsData = [
       <section className="flex flex-col items-center justify-center w-10/12 mx-auto skillset ">
         <header>
           <h1 className="text-white text-6xl ntext-center mt-20 mb-10">
-            My Skillset
+            {t("skillset")}
           </h1>
         </header>
         <div className="flex flex-col lg:flex-row items-center justify-center lg:space-x-36 mt-20 container">
@@ -68,7 +71,6 @@ const skillCardsData = [
               technologies={data.technologies}
               technologiesTtitles={data.technologiesTtitles}
             />
-            
           ))}
         </div>
       </section>
