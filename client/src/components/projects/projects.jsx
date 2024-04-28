@@ -6,8 +6,11 @@ import { useEffect, useState } from "react";
 import filterProjects from "../../utils/filter";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import {  projectCardAnimation, searchBarAnimation } from "../../utils/animations";
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
+  const {t} = useTranslation();
+  const translationKeys = t("projectType", {returnObjects: true});
 
 function  generateProjects(icons, titles) {
   return icons.map((icon, index) => (
@@ -119,7 +122,7 @@ function  generateProjects(icons, titles) {
     <main id="projects" className=" h-full  mx-auto flex justify-center">
       <section className="flex flex-col justify-center container w-10/12 ">
         <header className=" justify-center flex my-20 ">
-          <h1 className="text-white text-6xl">Projects</h1>
+          <h1 className="text-white text-6xl">{t("projects")}</h1>
         </header>
         <div className="filters h-full   w-6/12 mx-auto flex flex-col lg:flex-row justify-center  lg:space-x-10">
           {showAllButton && (
@@ -132,7 +135,7 @@ function  generateProjects(icons, titles) {
               type="button"
               onClick={() => handleFilterClick("All")}
             >
-              All
+              {translationKeys[3]}
             </motion.button>
           )}
           <motion.button
@@ -144,7 +147,7 @@ function  generateProjects(icons, titles) {
             type="button"
             onClick={() => handleFilterClick("single-page")}
           >
-            Single Page
+            {translationKeys[0]}
           </motion.button>
           <motion.button
             initial="initial"
@@ -155,7 +158,7 @@ function  generateProjects(icons, titles) {
             type="button"
             onClick={() => handleFilterClick("back-end-api")}
           >
-            Back-end API
+            {translationKeys[1]}
           </motion.button>
           <motion.button
             initial="initial"
@@ -166,7 +169,7 @@ function  generateProjects(icons, titles) {
             type="button"
             onClick={() => handleFilterClick("full-stack")}
           >
-            Full-Stack
+            {translationKeys[2]}
           </motion.button>
         </div>
         <article className="flex flex-wrap w-full mx-auto h-full mt-20">
@@ -178,7 +181,7 @@ function  generateProjects(icons, titles) {
                 initial="hidden"
                 animate={controls}
                 exit="hidden"
-                className="lg:w-1/3  p-4" // Adjust classes here as needed
+                className="lg:w-1/3  p-4" 
               >
                 <ProjectsCard projectContent={project} />
               </motion.div>

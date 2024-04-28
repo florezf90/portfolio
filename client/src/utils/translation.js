@@ -41,6 +41,8 @@ i18next
           email: "Email",
           skillset: "Skillset",
           skillcards: ["front-end", "tools", "back-end"],
+          projectType: ["Single Page", "Back-end API", "Full-stack", "All"],
+          projectCard: ["Project Code", "Live Demo"],
         },
       },
       es: {
@@ -77,6 +79,13 @@ i18next
           email: "Correo electronico",
           skillset: " habilidades",
           skillcards: ["front-end", "herramientas", "back-end"],
+          projectType: [
+            "Página Única",
+            "API del servidor",
+            "Full-stack",
+            "Todos",
+          ],
+          projectCard: ["Código del Proyecto", "Demostración en Vivo"],
         },
       },
       de: {
@@ -114,6 +123,8 @@ i18next
           email: "E-Mail",
           skillset: "Fähigkeiten",
           skillcards: ["front-end", "Werkzeuge", "back-end"],
+          projectType: ["Einzelne Seite", "Backend-API", "Full-stack", "Alle"],
+          projectCard: ["Projektcode", "Live-Demo"],
         },
       },
       ru: {
@@ -151,6 +162,13 @@ i18next
           email: "Электронная почта",
           skillset: "навыки",
           skillcards: ["фронтенд", "инструменты", "бэкенд"],
+          projectType: [
+            "Одностраничное приложение",
+            "API сервера",
+            "Full-stack",
+            "Все",
+          ],
+          projectCard: ["Код проекта", "Прямая трансляция"],
         },
       },
     },
