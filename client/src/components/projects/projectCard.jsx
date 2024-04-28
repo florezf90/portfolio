@@ -4,10 +4,13 @@ import {  sideborderAnimation, borderTopRight, borderBottomLeft } from "../../ut
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const ProjectsCard = ({ projectContent }) => {
   const controlsBottomLeft = useAnimation();
   const controlsTopRight = useAnimation();
+  const { t } = useTranslation();
+  const translationKeys = t("projectCard", { returnObjects: true });
 
   const { ref, inView } = useInView({ threshold: 1, triggerOnce: true });
   React.useEffect(() => {
@@ -74,7 +77,7 @@ const ProjectsCard = ({ projectContent }) => {
               aria-label="Project Code"
               className="my-4 mx-5 p-4 rounded text-white"
             >
-              Project Code
+              {translationKeys[0]}
             </motion.button>
           </a>
           <a href={liveUrl}>
@@ -85,7 +88,7 @@ const ProjectsCard = ({ projectContent }) => {
               variants={sideborderAnimation}
               className=" mx-5 p-4 rounded text-white"
             >
-              Live Demo
+              {translationKeys[1]}
             </motion.button>
           </a>
         </div>
