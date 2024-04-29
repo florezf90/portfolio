@@ -2,9 +2,10 @@ import './index.css'
 import purifyIcons from '../../utils/purify';
 import { siInstagram, siLinkedin, siGithub } from 'simple-icons';
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
-
+    const { t } = useTranslation();
     const iconObjects = [siLinkedin, siGithub, siInstagram];
     const socialSvg = iconObjects.map((icon) => icon.svg);
     const socialIcons = purifyIcons(socialSvg);
@@ -42,7 +43,7 @@ return (
       id="footerNav"
       className="lg:w-1/3 h-96 flex flex-col items-center justify-center "
     >
-      <h1 className="text-white text-3xl font-bold">Useful Links</h1>
+      <h1 className="text-white text-3xl font-bold">{t("links")}:</h1>
       <ul className="py-6">
         <li className="my-2">
           <motion.button
@@ -50,7 +51,7 @@ return (
             onClick={() => scrollToSection("#about")}
             className="text-white text-xl font-bold"
           >
-            About
+            {t("abouttitle")}
           </motion.button>
         </li>
         <li className="my-2">
@@ -59,7 +60,7 @@ return (
           onClick={() => scrollToSection("#projects")}
             className="text-white text-xl font-bold"
           >
-            Projects
+            {t("projects")}
           </motion.button>
         </li>
 
@@ -83,7 +84,7 @@ return (
       className="lg:w-1/3 flex flex-col items-center justify-center "
     >
       <h1 className="text-white text-3xl font-bold mb-10 mt-20 lg:mt-0">
-        Social Media
+        {t("SocialMedia")}
       </h1>
       <div className="flex flex-row mt-2 mb-14">{generateSocialJsx}</div>
     </section>

@@ -123,8 +123,6 @@ const Projects = () => {
   }, [displayedProjects, controls,]);
 
 
-  
-
   useEffect(() => {
     const translateDescription = () => {
       return projects.map((project, index) => ({

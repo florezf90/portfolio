@@ -4,8 +4,11 @@ import MapComponent from "../googleMap/Map";
 import { motion } from "framer-motion";
 import { buttonVariants, mapbackgroundVariants } from "../../utils/animations";
 import Modal from "../modal/modal";
+import { useTranslation } from "react-i18next";
 const Form = () => {
-  const [isModalopen, setisModalopen] = useState(false)
+  const [isModalopen, setisModalopen] = useState(false);
+  const {t} = useTranslation();
+  const translationKeys = t("modal", { returnObjects: true });
 
   const [formData, setFormData] = useState({
     name: "",
@@ -82,14 +85,16 @@ const Form = () => {
   return (
     <main className="h-full flex flex-col bg-cover bg-center main  items-center justify-center py-20 ">
       <header id="contact" className="mt-14 mb-4">
-        <h1 className="text-3xl font-bold text-white mb-10">Get In Touch</h1>
+        <h1 className="text-3xl font-bold text-white mb-10">
+          {t("getInTouch")}
+        </h1>
       </header>
       <section className="flex flex-wrap  h-3/4 w-10/12 my-20  items-center sectionContainer">
         <section
           className="lg:w-6/12 w-full  flex-row lg:flex-col text-white mapContainer text-center"
           style={{ height: "600px" }}
         >
-          <h1 className="text-3xl font-bold my-4">My current location</h1>
+          <h1 className="text-3xl font-bold my-4">{t("location")}</h1>
           <motion.figure
             className="w-10/12 h-3/4 flex items-center bg-slate-100 mx-auto border-2 border-transparent"
             variants={mapbackgroundVariants}
@@ -101,12 +106,12 @@ const Form = () => {
         <div className="lg:w-6/12 w-full flex flex-col items-center ">
           <fieldset className="flex flex-col items-center p-4 w-10/12 my-10 text-white ">
             <legend className="text-2xl text-center px-9 pb-4 ">
-              Contact me
+              {t("reachOut")}
             </legend>
             <form onSubmit={hanldeSubmit} className="w-full px-6">
               <div className="flex flex-col lg:flex-row space-x-2 items-center mb-4 ">
                 <label className="w-full mb-2">
-                  <h1 className="text-center py-3">Name</h1>
+                  <h1 className="text-center py-3">{t("name")}</h1>
                   <motion.input
                     whileTap={{ scale: 0.9 }}
                     type="text"
@@ -119,7 +124,7 @@ const Form = () => {
                   {errors.name && <p>{errors.name}</p>}
                 </label>
                 <label className="w-full mb-2">
-                  <h1 className="text-center py-3">Last name</h1>
+                  <h1 className="text-center py-3">{t("lastName")}</h1>
                   <motion.input
                     whileTap={{ scale: 0.9 }}
                     type="text"
@@ -132,7 +137,7 @@ const Form = () => {
                 </label>
               </div>
               <label className="w-full mb-2">
-                <h1 className="text-center py-4">Email</h1>
+                <h1 className="text-center py-4">{t("email")}</h1>
                 <motion.input
                   whileTap={{ scale: 0.9 }}
                   type="email"
@@ -145,7 +150,7 @@ const Form = () => {
                 {errors.email && <p>{errors.email}</p>}
               </label>
               <label className="w-full mb-2">
-                <h1 className="text-center py-4">Message</h1>
+                <h1 className="text-center py-4">{t("message")}</h1>
                 <motion.textarea
                   whileTap={{ scale: 0.9 }}
                   name="message"
@@ -164,7 +169,7 @@ const Form = () => {
                   className=" py-2 my-4  text-xl text-center w-1/3 rounded border-2 border-transparent hover:border-gray-100"
                   aria-label="Submit"
                 >
-                  Send
+                  {t("send")}
                 </motion.button>
               </div>
             </form>
@@ -173,8 +178,7 @@ const Form = () => {
       </section>
       <Modal isOpen={isModalopen} onClose={() => setisModalopen(false)}>
         <p className="text-xl text-center">
-          Thank you for contacting me!!
-          <br /> Please allow within 24 hours for me to get back to you.
+         {translationKeys[2]}
         </p>
       </Modal>
     </main>

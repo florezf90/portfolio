@@ -1,5 +1,10 @@
 /* eslint-disable react/prop-types */
+import { useTranslation } from "react-i18next";
 const Modal = ({ isOpen, onClose, children }) => {
+
+  const { t } = useTranslation();
+  const translationKeys = t("modal", { returnObjects: true });
+
   if (!isOpen) return null;
 
   return (
@@ -13,7 +18,7 @@ const Modal = ({ isOpen, onClose, children }) => {
         <div className="mt-3 text-center">
           {/* Modal header */}
           <div className="flex justify-between items-center pb-3">
-            <p className="text-2xl text-center font-bold">Email sent successfully</p>
+            <p className="text-2xl text-center font-bold">{translationKeys[0]}</p>
             <button
               className="modal-close cursor-pointer z-50"
               onClick={onClose}
@@ -38,7 +43,7 @@ const Modal = ({ isOpen, onClose, children }) => {
               onClick={onClose}
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             >
-              Close
+              {translationKeys[1]}
             </button>
           </div>
         </div>
