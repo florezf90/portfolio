@@ -16,6 +16,7 @@ i18next
             "A dynamic full-stack developer specializing  in the MERN stack, residing in San Antonio, TX, I am committed to crafting high-quality solutions.",
           MyWork: "My Work",
           getInTouch: "Get In Touch",
+          reachOut: "Reach Me Out",
           home: "Home",
           abouttitle: "About",
           aboutDescription: `Welcome to my website! I'm Luis Felipe Florez, a 22-year-old Colombian dedicated to delivering 
@@ -33,10 +34,14 @@ i18next
           projects: "Projects",
           language: "Language",
           name: "Name",
+          lastName: "Last Name",
           education: "Education",
           felipe: "Felipe Florez",
+          message: "Message",
           resume: "CV",
           email: "Email",
+          send: "Send",
+          location: "My current location",
           skillset: "Skillset",
           skillcards: ["front-end", "tools", "back-end"],
           projectType: ["Single Page", "Back-end API", "Full-stack", "All"],
@@ -49,6 +54,13 @@ i18next
           their KPIs, and how they've been doing overtime.
           `,
           ],
+          links: "Useful links",
+          SocialMedia: "Social Media",
+          modal: [
+            "Email sent successfully",
+            "Close",
+            "Thank you for your contacting me. Please allow within 24 hours for me to get back to you.",
+          ],
         },
       },
       es: {
@@ -58,6 +70,7 @@ i18next
             "Un desarrollador dinámico full-stack especializado en el stack MERN,  residiendo en San Antonio, TX, estoy comprometido a crear soluciones de alta calidad.",
           MyWork: "Mi trabajo",
           getInTouch: "Hablemos",
+          reachOut: "contáctame",
           home: "Inicio",
           abouttitle: "Sobre mi",
           aboutDescription: `¡Bienvenidos a mi sitio web! Soy Luis Felipe Florez, 22 años.
@@ -79,10 +92,14 @@ i18next
           projects: "Proyectos",
           language: "Idioma",
           felipe: "Felipe Florez",
+          message: "Mensaje",
           name: "Nombre",
+          lastName: "Apellido",
           education: "Educación",
           resume: "Hoja de vida",
+          send: "Enviar",
           email: "Correo electronico",
+          location: "Mi ubicación actual",
           skillset: " habilidades",
           skillcards: ["front-end", "herramientas", "back-end"],
           projectType: [
@@ -100,6 +117,13 @@ i18next
           sus KPI y cómo les ha ido con el pasar del tiempo.
           `,
           ],
+          links: "Enlaces utiles",
+          SocialMedia: "Redes sociales",
+          modal: [
+            "Correo electrónico enviado exitosamente",
+            "cerrar",
+            "Gracias por su consulta.  Por favor, permítame hasta 24 horas para responderle.",
+          ],
         },
       },
       de: {
@@ -109,6 +133,7 @@ i18next
             "Ein dynamischer Full-Stack-Entwickler mit Spezialisierung auf den MERN-Stack, wohnhaft in San Antonio, TX, der sich verpflichtet hat, hochwertige Lösungen zu entwickeln.",
           MyWork: "Meine Arbeit",
           getInTouch: "Kontaktiere mich",
+          reachOut: "Nehmen Sie Kontakt mit mir auf",
           home: "Start",
           abouttitle: "Über mich",
           aboutDescription: `Willkommen auf meiner Website! Ich bin Luis Felipe Florez, ein 22-Jähriger
@@ -131,10 +156,14 @@ i18next
           projects: "Projekte",
           language: "Sprache",
           felipe: "Felipe Florez",
+          message: "Nachricht",
           name: "Name",
+          lastName: "Nachname",
           education: "Ausbildung",
+          send: "Senden",
           resume: "Lebenslauf",
           email: "E-Mail",
+          location: " Mein aktueller Standort",
           skillset: "Fähigkeiten",
           skillcards: ["front-end", "Werkzeuge", "back-end"],
           projectType: ["Einzelne Seite", "Backend-API", "Full-stack", "Alle"],
@@ -146,9 +175,13 @@ i18next
           zu erstellen. Diese Anwendung zur Verfolgung von Daten der Vertriebspartner ermöglicht es den Managern kleiner und mittlerer Unternehmen, Aufzeichnungen
            über ihre Mitarbeiter, ihre KPIs und deren Entwicklung im Laufe der Zeit zu führen.
           `,
-          `
-          lorem ipsum
-          `
+          ],
+          links: "Nützliche Links",
+          SocialMedia: "Sozialen Netzwerken",
+          modal: [
+            " E-Mail erfolgreich gesendet",
+            "Schließen",
+            "Vielen Dank für Ihre Kontaktaufnahme! Bitte erlauben Sie mir bis zu 24 Stunden, um Ihnen zu antworten.",
           ],
         },
       },
@@ -159,6 +192,7 @@ i18next
             "Динамичный разработчик full-stack с узкой специализацией на стеке MERN, базирующийся в Сан-Антонио, Техас, я посвящен созданию высококачественных решений.",
           MyWork: "мои проекты",
           getInTouch: "Свяжитесь со мной",
+          reachOut: "свяжись со мной",
           home: "начинать",
           abouttitle: "обо мне",
           aboutDescription: `Добро пожаловать на мой сайт! Я Луис Фелипе Флорес, 22 года.
@@ -181,10 +215,14 @@ i18next
           projects: "Проекты",
           language: "Язык",
           name: "Имя",
+          send: "Отправить",
+          lastName: "фамилия",
           felipe: "Фелипе Флорес",
+          message: "Сообщение",
           education: "Образование",
           resume: "резюме",
           email: "Электронная почта",
+          location: " Мое текущее местоположение:",
           skillset: "навыки",
           skillcards: ["фронтенд", "инструменты", "бэкенд"],
           projectType: [
@@ -201,6 +239,13 @@ i18next
           панель сотрудников. Это приложение для отслеживания данных дистрибьюторов позволит менеджерам малых и средних предприятий 
           вести записи о своих сотрудниках, их KPI и их изменениях в течение времени.
           `,
+          ],
+          links: " Полезные ссылки",
+          SocialMedia: " Социальные сети",
+          modal: [
+            "Письмо успешно отправлено",
+            "Закрыть ",
+            "Спасибо, что связались со мной! Пожалуйста, дайте мне до 24 часов, чтобы ответить вам.",
           ],
         },
       },
