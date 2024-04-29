@@ -4,12 +4,10 @@ import {  sideborderAnimation, borderTopRight, borderBottomLeft } from "../../ut
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import React from "react";
-import { useTranslation } from "react-i18next";
 
-const ProjectsCard = ({ projectContent }) => {
+const ProjectsCard = ({ t, projectContent }) => {
   const controlsBottomLeft = useAnimation();
   const controlsTopRight = useAnimation();
-  const { t } = useTranslation();
   const translationKeys = t("projectCard", { returnObjects: true });
 
   const { ref, inView } = useInView({ threshold: 1, triggerOnce: true });

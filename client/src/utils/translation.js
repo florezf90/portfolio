@@ -146,6 +146,9 @@ i18next
           zu erstellen. Diese Anwendung zur Verfolgung von Daten der Vertriebspartner ermöglicht es den Managern kleiner und mittlerer Unternehmen, Aufzeichnungen
            über ihre Mitarbeiter, ihre KPIs und deren Entwicklung im Laufe der Zeit zu führen.
           `,
+          `
+          lorem ipsum
+          `
           ],
         },
       },
