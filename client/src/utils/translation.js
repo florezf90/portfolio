@@ -2,8 +2,6 @@ import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 import languageDetector from "i18next-browser-languagedetector";
 
-
-
 i18next
   .use(initReactI18next)
   .use(languageDetector)
@@ -43,6 +41,14 @@ i18next
           skillcards: ["front-end", "tools", "back-end"],
           projectType: ["Single Page", "Back-end API", "Full-stack", "All"],
           projectCard: ["Project Code", "Live Demo"],
+          projectDescription: [
+            `
+          Growth is the most crucial part of a small business; if it's not doing so, the company is dying, and one of the most effective ways
+          to prioritize growth is by following its daily performance data. That is how we came up with the idea of creating an employee dashboard.
+          This dealer data tracker application will allow the managers of small and medium-sized companies to keep records of their employees,
+          their KPIs, and how they've been doing overtime.
+          `,
+          ],
         },
       },
       es: {
@@ -86,6 +92,14 @@ i18next
             "Todos",
           ],
           projectCard: ["Código del Proyecto", "Demostración en Vivo"],
+          projectDescription: [
+            `
+         El crecimiento es la parte más crucial de una pequeña empresa; si no lo está haciendo, la empresa está muriendo, y una de las formas más
+          efectivas de priorizar el crecimiento es siguiendo sus datos de rendimiento diario. Así es como surgió la idea de crear un panel de empleados. 
+          Esta aplicación de seguimiento de datos de distribuidores permitirá a los gerentes de pequeñas y medianas empresas mantener registros de sus empleados, 
+          sus KPI y cómo les ha ido con el pasar del tiempo.
+          `,
+          ],
         },
       },
       de: {
@@ -125,6 +139,14 @@ i18next
           skillcards: ["front-end", "Werkzeuge", "back-end"],
           projectType: ["Einzelne Seite", "Backend-API", "Full-stack", "Alle"],
           projectCard: ["Projektcode", "Live-Demo"],
+          projectDescription: [
+            `
+         Das Wachstum ist der entscheidendste Teil eines kleinen Unternehmens; wenn es nicht stattfindet, stirbt das Unternehmen, und eine der effektivsten
+          Möglichkeiten, das Wachstum zu priorisieren, besteht darin, seine täglichen Leistungsdaten zu verfolgen. So entstand die Idee, ein Mitarbeiterdashboard 
+          zu erstellen. Diese Anwendung zur Verfolgung von Daten der Vertriebspartner ermöglicht es den Managern kleiner und mittlerer Unternehmen, Aufzeichnungen
+           über ihre Mitarbeiter, ihre KPIs und deren Entwicklung im Laufe der Zeit zu führen.
+          `,
+          ],
         },
       },
       ru: {
@@ -169,8 +191,15 @@ i18next
             "Все",
           ],
           projectCard: ["Код проекта", "Прямая трансляция"],
+          projectDescription: [
+            `
+         Рост является наиболее важной частью малого бизнеса; если он не происходит, предприятие умирает, и один из самых эффективных 
+         способов приоритизации роста - следить за его ежедневными показателями производительности. Именно так возникла идея создать
+          панель сотрудников. Это приложение для отслеживания данных дистрибьюторов позволит менеджерам малых и средних предприятий 
+          вести записи о своих сотрудниках, их KPI и их изменениях в течение времени.
+          `,
+          ],
         },
       },
     },
   });
-
