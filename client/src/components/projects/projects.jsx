@@ -15,6 +15,73 @@ const Projects = () => {
     returnObjects: true,
   });
 
+    const projects = [
+      {
+        title: "Dealer Data Tracking App",
+        imgSrc: DealerTracker,
+        description: projectTranslationKeys[0],
+        technologies: generateProjects(
+          projectTechnologies[0].icon,
+          projectTechnologies[0].name
+        ),
+        githubUrl: "https://github.com/florezf90/dealer-data-tracker",
+        liveUrl: "https://dealer-data-tracker.onrender.com/",
+        projectType: "full-stack",
+      },
+      {
+        title: "Project single-page",
+        imgSrc: "https://via.placeholder.com/300",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
+        technologies: generateProjects(
+          projectTechnologies[1].icon,
+          projectTechnologies[1].name
+        ),
+        githubUrl: "https://github.com",
+        liveUrl: "https://github.com",
+        projectType: "single-page",
+      },
+      {
+        title: "Project 2 single-page",
+        imgSrc: "https://via.placeholder.com/300",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
+        technologies: generateProjects(
+          projectTechnologies[0].icon,
+          projectTechnologies[1].name
+        ),
+        githubUrl: "https://github.com",
+        liveUrl: "https://github.com",
+        projectType: "single-page",
+      },
+      {
+        title: "Project back-end-api",
+        imgSrc: "https://via.placeholder.com/300",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
+        technologies: generateProjects(
+          projectTechnologies[0].icon,
+          projectTechnologies[1].name
+        ),
+        githubUrl: "https://github.com",
+        liveUrl: "https://github.com",
+        projectType: "back-end-api",
+      },
+      {
+        title: "Project 2 back-end-api",
+        imgSrc: "https://via.placeholder.com/300",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
+        technologies: generateProjects(
+          projectTechnologies[0].icon,
+          projectTechnologies[1].name
+        ),
+        githubUrl: "https://github.com",
+        liveUrl: "https://github.com",
+        projectType: "back-end-api",
+      },
+    ];
+
   
 
 
@@ -32,72 +99,7 @@ const Projects = () => {
     ));
   }
 
-  const projects = [
-    {
-      title: "Dealer Data Tracking App",
-      imgSrc: DealerTracker,
-      description: projectTranslationKeys[0],
-      technologies: generateProjects(
-        projectTechnologies[0].icon,
-        projectTechnologies[0].name
-      ),
-      githubUrl: "https://github.com/florezf90/dealer-data-tracker",
-      liveUrl: "https://dealer-data-tracker.onrender.com/",
-      projectType: "full-stack",
-    },
-    {
-      title: "Project single-page",
-      imgSrc: "https://via.placeholder.com/300",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
-      technologies: generateProjects(
-        projectTechnologies[1].icon,
-        projectTechnologies[1].name
-      ),
-      githubUrl: "https://github.com",
-      liveUrl: "https://github.com",
-      projectType: "single-page",
-    },
-    {
-      title: "Project 2 single-page",
-      imgSrc: "https://via.placeholder.com/300",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
-      technologies: generateProjects(
-        projectTechnologies[0].icon,
-        projectTechnologies[1].name
-      ),
-      githubUrl: "https://github.com",
-      liveUrl: "https://github.com",
-      projectType: "single-page",
-    },
-    {
-      title: "Project back-end-api",
-      imgSrc: "https://via.placeholder.com/300",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
-      technologies: generateProjects(
-        projectTechnologies[0].icon,
-        projectTechnologies[1].name
-      ),
-      githubUrl: "https://github.com",
-      liveUrl: "https://github.com",
-      projectType: "back-end-api",
-    },
-    {
-      title: "Project 2 back-end-api",
-      imgSrc: "",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt ullam fuga ratione at assumenda architecto, quidem voluptates tempora itaque reprehenderit, eum a unde eligendi modi deserunt quo dicta minus ad?",
-      technologies: generateProjects(
-        projectTechnologies[0].icon,
-        projectTechnologies[1].name
-      ),
-      githubUrl: "https://github.com",
-      liveUrl: "https://github.com",
-      projectType: "back-end-api",
-    },
-  ];
+
 
   const [displayedProjects, setDisplayedProjects] = useState(projects);
   const [showAllButton, setShowAllButton] = useState(false);
@@ -120,8 +122,27 @@ const Projects = () => {
     }
   }, [displayedProjects, controls,]);
 
+
+  
+
+  useEffect(() => {
+    const translateDescription = () => {
+      return projects.map((project, index) => ({
+        ...project,
+        description: t(projectTranslationKeys[index]),
+      }));
+    };
+
+    setDisplayedProjects(translateDescription());
+    // Ignoring dependency array warning because `projects` and `projectTranslationKeys`
+    // are not expected to change during the lifecycle of this component, and the effect
+    // should only run when the language changes.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [i18n.language, t ]);
+
+
   return (
-    <main key={i18n.language} id="projects" className=" h-full  mx-auto flex justify-center">
+    <main  id="projects" className=" h-full  mx-auto flex justify-center">
       <section className="flex flex-col justify-center container w-10/12 ">
         <header className=" justify-center flex my-20 ">
           <h1 className="text-white text-6xl">{t("projects")}</h1>
@@ -185,7 +206,7 @@ const Projects = () => {
                 exit="hidden"
                 className="lg:w-1/3  p-4"
               >
-                <ProjectsCard projectContent={project} />
+                <ProjectsCard t = {t} projectContent={project} />
               </motion.div>
             ))}
           </AnimatePresence>
